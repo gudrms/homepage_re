@@ -142,7 +142,7 @@ export const home = {
 
 export const addresses = {
   hq: {
-    ko: "서울특별시 서초구 효령로34길 4, 2층 202호",
+    ko: "서울특별시 서초구 효령로34길 4, 2층 202호 (방배동, 프린스효령빌딩)",
     en: "4, Hyoryeong-ro 34-gil, Seocho-gu, Seoul, Republic of Korea",
   } as L,
   factory: {
@@ -152,4 +152,39 @@ export const addresses = {
 };
 
 export const companyName: L = { ko: "㈜코어로보틱스", en: "CORE ROBOTICS Co., Ltd." };
-export const ceoName: L = { ko: "대표 이명진", en: "CEO Lee Myung-jin" };
+export const ceoName: L = { ko: "이명진", en: "Lee Myung-jin" };
+
+/** 푸터 사이트맵 */
+export const footerNav: { title: L; links: { label: L; href: string }[] }[] = [
+  {
+    title: { ko: "기업소개", en: "Company" },
+    links: [
+      { label: { ko: "About us", en: "About us" }, href: "/company" },
+      { label: { ko: "찾아오시는길", en: "Directions" }, href: "/company/location" },
+      { label: { ko: "연혁", en: "History" }, href: "/company/history" },
+      { label: { ko: "인증현황", en: "Certifications" }, href: "/company/certifications" },
+    ],
+  },
+  {
+    title: { ko: "사업영역", en: "Business" },
+    links: [
+      { label: { ko: "특수목적용 로봇", en: "Special Purpose Robotics" }, href: "/robotics" },
+      { label: { ko: "AI 예측·진단", en: "AI Diagnostics" }, href: "/ai" },
+      { label: { ko: "엔지니어링·진단장비", en: "Engineering & Diagnostics" }, href: "/engineering" },
+    ],
+  },
+  {
+    title: { ko: "뉴스", en: "News" },
+    links: [{ label: { ko: "Business Issues", en: "Business Issues" }, href: "/news" }],
+  },
+];
+
+/** 푸터 회사정보 라벨 */
+export const footerLabels = {
+  ceo: { ko: "대표자", en: "CEO" } as L,
+  bizNo: { ko: "사업자등록번호", en: "Biz Reg. No." } as L,
+  tel: { ko: "대표전화", en: "Tel" } as L,
+  fax: { ko: "팩스", en: "Fax" } as L,
+  hq: { ko: "본사", en: "HQ" } as L,
+  factory: { ko: "공장", en: "Factory" } as L,
+};
