@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORE ROBOTICS — 메인 시안 비교</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Pretendard',sans-serif;background:#101317;color:#e8edf2;min-height:100vh;padding:60px 24px}
+  .wrap{max-width:980px;margin:0 auto}
+  h1{font-size:30px;font-weight:700;letter-spacing:-.01em}
+  .sub{color:#8a96a3;margin-top:12px;font-size:15px;line-height:1.6}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{position:relative;background:#171c22;border:1px solid #232c35;border-radius:16px;overflow:hidden;transition:.25s;text-decoration:none;color:inherit;display:block}
+  .card:hover{transform:translateY(-6px);border-color:#3a4856}
+  .card.rec{border-color:#1f97d4;box-shadow:0 0 0 1px #1f97d4}
+  .rec-badge{position:absolute;top:12px;right:12px;z-index:2;font-size:11px;background:#1f97d4;color:#04101f;font-weight:700;padding:4px 10px;border-radius:20px}
+  .thumb{height:190px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;letter-spacing:.04em}
+  .thumb.a{background:radial-gradient(600px 300px at 70% 0%,rgba(46,167,224,.3),transparent),#061325;color:#5fd2f0}
+  .thumb.b{background:#f4f1ea;color:#143a6b;font-family:Georgia,serif;font-style:italic}
+  .body{padding:24px}
+  .body h2{font-size:19px;margin-bottom:8px}
+  .body p{color:#8a96a3;font-size:14px;line-height:1.6}
+  .tag{display:inline-block;margin-top:14px;font-size:12px;color:#5fd2f0;border:1px solid #2a333d;padding:5px 12px;border-radius:20px}
+  .open{margin-top:16px;font-size:13px;color:#7cc4ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>CORE ROBOTICS · 메인 페이지 시안</h1>
+  <p class="sub">두 가지 디자인 방향입니다. 각 카드를 눌러 실제 화면을 확인하고, 선호하는 방향을 골라주세요.<br>둘 다 동일한 콘텐츠(사업영역·회사정보)로 구성되어 있으며, 모바일에서도 확인 가능합니다.</p>
+  <div class="grid">
+    <a class="card" href="option-a-dark.html">
+      <div class="thumb a">시안 A</div>
+      <div class="body">
+        <h2>Dark · Hi-Tech</h2>
+        <p>원자력 관제실을 연상시키는 다크 테마. 기술적·강렬한 인상. 로보틱스/원전의 전문성과 임팩트를 강조.</p>
+        <span class="tag">강렬함 · 기술 중심</span>
+        <div class="open">화면 열기 →</div>
+      </div>
+    </a>
+    <a class="card" href="option-b-light.html">
+      <div class="thumb b">시안 B</div>
+      <div class="body">
+        <h2>Light · Editorial</h2>
+        <p>정제된 매거진 스타일의 밝은 테마. 세리프 타이포로 품격 강조. (에디토리얼 톤)</p>
+        <span class="tag" style="color:#7cc4ff">신뢰감 · 품격</span>
+        <div class="open">화면 열기 →</div>
+      </div>
+    </a>
+    <a class="card rec" href="option-b2-refined.html">
+      <span class="rec-badge">추천 · B2G</span>
+      <div class="thumb b" style="font-family:'Archivo',Arial,sans-serif;font-style:normal;font-weight:800">시안 B+</div>
+      <div class="body">
+        <h2>Refined · Corporate</h2>
+        <p>B의 라이트·블루 기반에 기술적 산세리프 + 협력기관 신뢰 스트립. 원자력·발전 B2G에 최적.</p>
+        <span class="tag" style="color:#7cc4ff">권위 · 신뢰 · B2G</span>
+        <div class="open">화면 열기 →</div>
+      </div>
+    </a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CORE ROBOTICS — 시안 B (Light / Editorial)</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f1ea;
+    --paper-2:#ebe7dd;
+    --ink:#161513;
+    --ink-soft:#5c574e;
+    --line:#d8d2c4;
+    --accent:#143a6b;      /* brand deep navy */
+    --accent-2:#1f7fb8;    /* brand cyan-blue */
+    --disp:'Fraunces',serif;
+    --serif:'Newsreader',serif;
+    --kr:'Pretendard',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--kr);line-height:1.65;overflow-x:hidden}
+  /* subtle paper grain */
+  body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E")}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 36px;position:relative;z-index:2}
+  a{color:inherit;text-decoration:none}
+  .label{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--accent-2)}
+
+  /* HEADER */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(244,241,234,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center}
+  .brand img{height:30px}
+  .menu{display:flex;gap:32px;font-size:14px;color:var(--ink-soft);font-weight:500}
+  .menu a{transition:color .2s;position:relative}
+  .menu a:hover{color:var(--ink)}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--ink);transition:width .25s}
+  .menu a:hover::after{width:100%}
+  .lang{font-family:var(--serif);font-size:14px;font-style:italic;color:var(--ink-soft)}
+  .lang b{color:var(--ink);font-style:normal}
+
+  /* HERO */
+  .hero{padding:172px 0 90px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:60px;align-items:end}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:30px}}
+  .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px;opacity:0;animation:fade .8s .1s forwards}
+  .eyebrow .ln{width:46px;height:1px;background:var(--ink)}
+  .eyebrow span{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+  h1.title{font-family:var(--disp);font-weight:400;font-size:clamp(44px,7vw,92px);line-height:1.0;letter-spacing:-.015em}
+  h1.title .l{display:block;overflow:hidden}
+  h1.title .l>span{display:block;transform:translateY(105%);animation:up .9s cubic-bezier(.16,1,.3,1) forwards}
+  h1.title .l:nth-child(1)>span{animation-delay:.15s}
+  h1.title .l:nth-child(2)>span{animation-delay:.28s;font-style:italic;color:var(--accent)}
+  h1.title .l:nth-child(3)>span{animation-delay:.41s}
+  @keyframes up{to{transform:translateY(0)}}
+  @keyframes fade{to{opacity:1}}
+  .hero-side{opacity:0;animation:fade 1s .6s forwards}
+  .hero-side p{font-family:var(--serif);font-size:18px;line-height:1.7;color:var(--ink-soft);border-left:2px solid var(--accent-2);padding-left:22px}
+  .hero-cta{margin-top:34px;display:flex;gap:16px;align-items:center}
+  .btn{font-size:14px;font-weight:600;padding:14px 28px;border-radius:40px;transition:.25s}
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{background:var(--accent)}
+  .btn-text{color:var(--ink);border-bottom:1px solid var(--ink);border-radius:0;padding:6px 2px}
+  .btn-text:hover{color:var(--accent-2);border-color:var(--accent-2)}
+
+  /* marquee figures */
+  .figures{margin-top:78px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}
+  .figures .f{padding:30px 8px 30px 0}
+  .figures .f .n{font-family:var(--disp);font-size:42px;font-weight:500;line-height:1}
+  .figures .f .n em{font-style:italic;color:var(--accent)}
+  .figures .f .t{font-size:13px;color:var(--ink-soft);margin-top:10px}
+  @media(max-width:680px){.figures{grid-template-columns:1fr 1fr;gap:0}}
+
+  /* SECTION */
+  section{padding:120px 0}
+  .sec-head{max-width:720px;margin-bottom:64px}
+  .sec-head .label{margin-bottom:18px;display:block}
+  .sec-head h2{font-family:var(--disp);font-weight:400;font-size:clamp(30px,4.4vw,52px);line-height:1.08;letter-spacing:-.01em}
+
+  /* editorial list of business areas */
+  .areas{border-top:1px solid var(--line)}
+  .area{display:grid;grid-template-columns:64px 1fr 1.1fr 40px;gap:30px;align-items:center;padding:38px 8px;border-bottom:1px solid var(--line);
+    transition:.35s;opacity:0;transform:translateY(24px)}
+  .area.in{opacity:1;transform:none}
+  .area:hover{background:var(--paper-2);padding-left:24px}
+  .area .no{font-family:var(--disp);font-size:18px;color:var(--accent-2)}
+  .area .ttl h3{font-family:var(--disp);font-weight:500;font-size:30px;line-height:1.1}
+  .area .ttl .en{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:4px}
+  .area .desc{color:var(--ink-soft);font-size:15px}
+  .area .desc .tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .area .desc .tags span{font-size:12px;border:1px solid var(--line);border-radius:30px;padding:5px 12px;color:var(--ink)}
+  .area .go{font-family:var(--disp);font-size:24px;text-align:right;transition:.25s;color:var(--ink-soft)}
+  .area:hover .go{color:var(--accent);transform:translateX(6px)}
+  @media(max-width:880px){.area{grid-template-columns:1fr;gap:14px}.area .go{display:none}}
+
+  /* pull quote */
+  .pull{background:var(--ink);color:var(--paper)}
+  .pull .wrap{padding:120px 36px}
+  .pull .label{color:var(--accent-2)}
+  .pull q{display:block;font-family:var(--disp);font-weight:400;font-size:clamp(26px,3.8vw,46px);line-height:1.3;margin-top:24px;max-width:960px;quotes:none}
+  .pull q em{font-style:italic;color:#7cc4f0}
+
+  /* CONTACT */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+  @media(max-width:780px){.contact{grid-template-columns:1fr}}
+  .contact h2{font-family:var(--disp);font-weight:400;font-size:clamp(32px,5vw,58px);line-height:1.05}
+  .contact h2 em{font-style:italic;color:var(--accent)}
+  .info{font-size:15px;line-height:1}
+  .info .row{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .info .row .k{font-family:var(--serif);font-style:italic;color:var(--accent-2);min-width:70px;font-size:14px}
+  .info .row .v{color:var(--ink)}
+
+  footer{padding:40px 0;border-top:1px solid var(--ink)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--ink-soft)}
+
+  .ribbon{position:fixed;bottom:18px;left:18px;z-index:99;font-family:var(--serif);font-style:italic;font-size:13px;background:var(--ink);color:var(--paper);padding:9px 16px;border-radius:30px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+</style>
+</head>
+<body>
+<div class="ribbon">시안 B · Light / Editorial</div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><img src="logo.png" alt="CORE ROBOTICS"></div>
+    <nav class="menu">
+      <a href="#">기업소개</a><a href="#biz">로보틱스</a><a href="#biz">AI 진단</a><a href="#biz">엔지니어링</a><a href="#">뉴스</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="lang"><b>KO</b> / en</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="ln"></span><span>Nuclear · Robotics · AI Diagnostics</span></div>
+    <div class="hero-grid">
+      <div>
+        <h1 class="title">
+          <span class="l"><span>위험한 일을</span></span>
+          <span class="l"><span>대신하는</span></span>
+          <span class="l"><span>기술입니다.</span></span>
+        </h1>
+      </div>
+      <div class="hero-side">
+        <p>인공지능 예측 진단, 정비 자동화와 원전 해체용 특수목적 로봇, 그리고 플랜트 엔지니어링까지 — 사람이 닿기 어려운 곳을 코어로보틱스가 대신합니다.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#biz">사업영역 살펴보기</a>
+          <a class="btn btn-text" href="#contact">문의하기</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="figures">
+      <div class="f"><div class="n"><em>7</em>-DOF</div><div class="t">Dual-arm Manipulator</div></div>
+      <div class="f"><div class="n">±0.1<span style="font-size:22px">mm</span></div><div class="t">반복 정밀도</div></div>
+      <div class="f"><div class="n"><em>1</em>ms</div><div class="t">실시간 제어</div></div>
+      <div class="f"><div class="n">100<span style="font-size:22px">kg</span></div><div class="t">Payload</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- BUSINESS -->
+<section id="biz">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Our Business — 사업영역</span>
+      <h2>세 개의 축으로<br>현장의 위험을 줄입니다.</h2>
+    </div>
+    <div class="areas">
+      <div class="area">
+        <div class="no">01</div>
+        <div class="ttl"><h3>특수목적용 로봇</h3><div class="en">Special Purpose Robotics</div></div>
+        <div class="desc">힘 제어와 비전 기술로 작업자의 감각·시야를 대신해 위험 현장의 작업을 수행합니다.
+          <div class="tags"><span>정비 자동화</span><span>원전 해체</span><span>Master-Slave</span><span>VR 훈련</span></div>
+        </div>
+        <div class="go">→</div>
+      </div>
+      <div class="area">
+        <div class="no">02</div>
+        <div class="ttl"><h3>AI 예측·진단</h3><div class="en">AI Predictive Diagnostics</div></div>
+        <div class="desc">인공지능·빅데이터 분석 기술로 플랜트 상태감시와 회전기기의 미래 고장을 예측합니다.
+          <div class="tags"><span>AIDE 진단장비</span><span>기동·정지 AI</span><span>센서 모니터링</span></div>
+        </div>
+        <div class="go">→</div>
+      </div>
+      <div class="area">
+        <div class="no">03</div>
+        <div class="ttl"><h3>엔지니어링·진단장비</h3><div class="en">Engineering & Diagnostics</div></div>
+        <div class="desc">동력구동밸브 성능 평가와 주기적 상태 감시를 위한 진단장비·센서와 엔지니어링 서비스.
+          <div class="tags"><span>POV 진단</span><span>환기성능시험</span><span>MOVIDS A+</span><span>ACSENTT</span></div>
+        </div>
+        <div class="go">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div class="pull">
+  <div class="wrap">
+    <span class="label">A new name, a new era</span>
+    <q>데이터가 에너지가 되고, 기술이 바다를 움직이는 시대 —
+      <em>코어로보틱스가 차세대 원자력과 스마트 조선의 중심</em>에 서겠습니다.</q>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <span class="label">Get in touch</span>
+      <h2 style="margin-top:16px">함께<br><em>시작</em>하시죠.</h2>
+    </div>
+    <div class="info">
+      <div class="row"><div class="k">본사</div><div class="v">서울특별시 서초구 효령로34길 4, 2층 202호</div></div>
+      <div class="row"><div class="k">공장</div><div class="v">부산광역시 기장군 장안읍 의과학6로 17</div></div>
+      <div class="row"><div class="k">Tel</div><div class="v">02-525-8660 / Fax 02-525-8662</div></div>
+      <div class="row"><div class="k">Mail</div><div class="v">COREROBOTICS@CORE-ROBOTICS.KR</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>㈜코어로보틱스 · 대표 이명진 · 사업자등록번호 124-81-71983</div>
+    <div>© 2026 Core Robotics. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*110);io.unobserve(e.target)}})},{threshold:.25});
+  document.querySelectorAll('.area').forEach(a=>io.observe(a));
+</script>
+</body>
+</html>
