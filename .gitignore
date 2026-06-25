@@ -1,0 +1,17 @@
+# 이 repo는 루트(프로젝트 전체)를 추적합니다.
+# web/ 빌드·의존성 산출물은 web/.gitignore 가 처리합니다 (node_modules, .next, out 등).
+
+# IDE
+/.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude 로컬 설정 (공유 불필요)
+.claude/settings.local.json
+
+# 로그/임시
+*.log
+*.tmp
