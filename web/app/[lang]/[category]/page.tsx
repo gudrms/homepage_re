@@ -58,19 +58,20 @@ export default async function CategoryPage({
           <div className="cat-grid">
             {c.products.map((p, i) => (
               <Reveal key={p.slug} delay={i * 90} className="cat-card">
-                <Link className="ci" href={`/${lang}/${c.slug}/${p.slug}`}>
+                <Link className="cat-card-link" href={`/${lang}/${c.slug}/${p.slug}`} aria-label={p.name} />
+                <div className="ci">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={p.image} alt={p.name} loading="lazy" />
-                </Link>
+                </div>
                 <div className="cb">
                   <span className="en">
                     {c.no}.{String(i + 1).padStart(2, "0")} · {p.tags[0]}
                   </span>
                   <h3>{p.name}</h3>
                   <p>{p.summary[lang]}</p>
-                  <Link className="more" href={`/${lang}/${c.slug}/${p.slug}`}>
+                  <span className="more">
                     {productLabels.viewDetail[lang]} <span className="arr">→</span>
-                  </Link>
+                  </span>
                 </div>
               </Reveal>
             ))}

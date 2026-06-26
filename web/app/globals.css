@@ -870,6 +870,7 @@ footer.site {
   gap: 20px;
 }
 .cat-card {
+  position: relative;
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   background: var(--surface);
@@ -877,6 +878,12 @@ footer.site {
   border-radius: 14px;
   overflow: hidden;
   transition: 0.3s;
+  cursor: pointer;
+}
+.cat-card .cat-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 .cat-card:hover {
   border-color: var(--blue);
