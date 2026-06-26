@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import Splash from "@/components/Splash";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -33,7 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${archivo.variable} ${plexMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Splash />
+        {children}
+      </body>
     </html>
   );
 }

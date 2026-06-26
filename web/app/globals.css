@@ -1547,3 +1547,66 @@ footer.site {
   .news-title { flex: 1 1 100%; order: 3; font-size: 14px; }
   .news-date { font-size: 12px; }
 }
+
+/* ---------- intro splash ---------- */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  background-image: radial-gradient(
+    900px 500px at 50% 38%,
+    rgba(31, 151, 212, 0.12),
+    transparent 60%
+  );
+  transition: opacity 0.55s ease, visibility 0.55s ease;
+}
+.splash--hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.splash-logo {
+  width: clamp(150px, 26vw, 200px);
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(12, 35, 64, 0.16));
+  animation: splashIn 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.splash-bar {
+  display: block;
+  width: 140px;
+  height: 3px;
+  margin-top: 24px;
+  background: var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.splash-bar > span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--blue);
+  border-radius: 2px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: splashBar 1.15s ease forwards;
+}
+@keyframes splashIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.95); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes splashBar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash-logo,
+  .splash-bar > span { animation: none; }
+}
