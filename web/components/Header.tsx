@@ -78,7 +78,7 @@ export default function Header({ lang }: { lang: Lang }) {
           </Link>
 
           <nav className={`menu ${open ? "open" : ""}`}>
-            {nav.map((n) => (
+            {nav.filter((n) => n.id !== "contact").map((n) => (
               <a
                 key={n.id}
                 href={`/${lang}/${n.href}`}
@@ -88,14 +88,20 @@ export default function Header({ lang }: { lang: Lang }) {
                 {n.label[lang]}
               </a>
             ))}
-            <a href={`/${lang}/news`} style={{ opacity: 0.6 }}>
+            <Link href={`/${lang}/company`} onClick={() => setOpen(false)}>
+              {lang === "ko" ? "회사소개" : "Company"}
+            </Link>
+            <Link href={`/${lang}/news`} onClick={() => setOpen(false)}>
               {lang === "ko" ? "뉴스" : "News"}
-            </a>
+            </Link>
           </nav>
 
-          <Link className="cta" href={`/${lang}/#contact`}>
-            {lang === "ko" ? "문의하기" : "Contact"}
-          </Link>
+          <a
+            className="cta"
+            href={`mailto:COREROBOTICS@CORE-ROBOTICS.KR?subject=${encodeURIComponent(lang === "ko" ? "[코어로보틱스] 사업 문의" : "[CORE ROBOTICS] Business Inquiry")}&body=${encodeURIComponent(lang === "ko" ? "■ 이름 / Name:\n■ 회사명 / Company:\n■ 연락처 / Contact:\n■ 문의 내용:\n\n" : "■ Name:\n■ Company:\n■ Contact:\n■ Inquiry:\n\n")}`}
+          >
+            {lang === "ko" ? "사업문의" : "Contact"}
+          </a>
           <button
             className="menu-toggle"
             onClick={() => setOpen((o) => !o)}

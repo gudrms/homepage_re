@@ -1018,3 +1018,211 @@ footer.site {
     gap: 6px 10px;
   }
 }
+
+/* ---------- company sub-nav ---------- */
+.co-subnav {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  position: sticky;
+  top: 76px;
+  z-index: 10;
+}
+.co-subnav .wrap {
+  display: flex;
+  gap: 0;
+}
+.co-subnav a {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.co-subnav a:hover { color: var(--blue); }
+.co-subnav a.active {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
+
+/* ---------- about ---------- */
+.co-about {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.co-intro p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--ink-2);
+  margin-bottom: 10px;
+}
+.co-biz-title {
+  margin-bottom: -12px;
+}
+.co-biz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.co-biz-card a {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 30px 28px 26px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  height: 100%;
+  transition: 0.25s;
+}
+.co-biz-card a:hover {
+  border-color: var(--blue);
+  box-shadow: 0 12px 32px -16px rgba(11,35,68,0.3);
+  transform: translateY(-3px);
+}
+.co-biz-no {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--blue);
+  letter-spacing: 0.06em;
+}
+.co-biz-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.co-biz-card h3 {
+  font-family: var(--disp);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 4px 0 6px;
+}
+.co-biz-card p {
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* ---------- history ---------- */
+.co-history-img img {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* ---------- certifications ---------- */
+.certi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.certi-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.certi-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 8px 24px -12px rgba(11,35,68,0.25);
+}
+.certi-card img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+}
+.certi-card p {
+  font-size: 12px;
+  color: var(--ink-2);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ---------- location ---------- */
+.loc-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.loc-tabs button {
+  padding: 9px 22px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.loc-tabs button.active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+.loc-wrap {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: start;
+}
+.loc-map {
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--line);
+  min-height: 420px;
+}
+.loc-map iframe,
+.loc-map .root_daum_roughmap {
+  width: 100%;
+  height: 420px;
+  display: block;
+}
+.loc-info dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 16px;
+  align-items: start;
+}
+.loc-info dt {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--blue);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-top: 2px;
+  white-space: nowrap;
+}
+.loc-info dd {
+  font-size: 14px;
+  color: var(--ink-1);
+  line-height: 1.6;
+}
+.loc-info dd a {
+  color: var(--ink-1);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+  .co-biz-grid { grid-template-columns: 1fr 1fr; }
+  .certi-grid { grid-template-columns: repeat(3, 1fr); }
+  .loc-wrap { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .co-biz-grid { grid-template-columns: 1fr; }
+  .certi-grid { grid-template-columns: repeat(2, 1fr); }
+  .co-subnav a { padding: 12px 14px; font-size: 13px; }
+}
