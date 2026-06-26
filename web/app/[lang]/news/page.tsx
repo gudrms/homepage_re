@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import { news, newsLabels } from "@/content/news";
@@ -44,10 +45,12 @@ export default async function NewsPage({
         <div className="wrap">
           <div className="news-list">
             {news.map((n, i) => (
-              <Reveal key={i} delay={i * 40} className="news-item">
+              <Reveal key={n.id} delay={i * 40} className="news-item">
+                <Link className="news-link" href={`/${lang}/news/${n.id}`} aria-label={n.title[lang]} />
                 <span className="news-tag">{n.tag[lang]}</span>
                 <span className="news-title">{n.title[lang]}</span>
                 <time className="news-date">{n.date}</time>
+                <span className="news-arr" aria-hidden>→</span>
               </Reveal>
             ))}
           </div>
