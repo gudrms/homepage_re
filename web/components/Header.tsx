@@ -108,12 +108,9 @@ export default function Header({ lang }: { lang: Lang }) {
             </Link>
           </nav>
 
-          <a
-            className="cta"
-            href={`mailto:COREROBOTICS@CORE-ROBOTICS.KR?subject=${encodeURIComponent(lang === "ko" ? "[코어로보틱스] 사업 문의" : "[CORE ROBOTICS] Business Inquiry")}&body=${encodeURIComponent(lang === "ko" ? "■ 이름 / Name:\n■ 회사명 / Company:\n■ 연락처 / Contact:\n■ 문의 내용:\n\n" : "■ Name:\n■ Company:\n■ Contact:\n■ Inquiry:\n\n")}`}
-          >
+          <Link className="cta" href={`/${lang}/#contact`} onClick={() => setOpen(false)}>
             {lang === "ko" ? "사업문의" : "Contact"}
-          </a>
+          </Link>
           <button
             className="menu-toggle"
             onClick={() => setOpen((o) => !o)}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
+import ContactForm from "@/components/ContactForm";
 import {
   home,
   businessAreas,
@@ -168,7 +169,7 @@ export default async function Home({
       {/* CONTACT */}
       <section id="contact">
         <div className="wrap contact">
-          <div>
+          <div className="contact-intro">
             <span className="eyebrow">{home.contactEyebrow[lang]}</span>
             <h2 style={{ marginTop: 14 }}>
               {lang === "ko" ? (
@@ -185,8 +186,7 @@ export default async function Home({
                 </>
               )}
             </h2>
-          </div>
-          <div className="info">
+            <div className="info">
             <div className="row">
               <div className="k">{home.labels.hq[lang]}</div>
               <div className="v">{addresses.hq[lang]}</div>
@@ -203,8 +203,14 @@ export default async function Home({
             </div>
             <div className="row">
               <div className="k">Mail</div>
-              <div className="v">{company.email}</div>
+              <div className="v">
+                <a href={`mailto:${company.email}`}>{company.email}</a>
+              </div>
             </div>
+            </div>
+          </div>
+          <div className="contact-form-wrap">
+            <ContactForm lang={lang} />
           </div>
         </div>
       </section>
