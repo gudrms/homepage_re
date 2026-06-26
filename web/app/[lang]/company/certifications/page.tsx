@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import { certifications, companyLabels } from "@/content/company";
 import Reveal from "@/components/Reveal";
+import CompanyHeader from "@/components/CompanyHeader";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -29,42 +29,13 @@ export default async function CertificationsPage({
   const lang: Lang = isLang(raw) ? raw : "ko";
   if (!isLang(raw)) notFound();
 
-  const subNav = [
-    { href: "company", label: companyLabels.aboutTitle[lang] },
-    { href: "company/history", label: companyLabels.historyTitle[lang] },
-    { href: "company/certifications", label: companyLabels.certiTitle[lang] },
-    { href: "company/location", label: companyLabels.locationTitle[lang] },
-  ];
-
   return (
     <>
-      <div className="phero">
-        <div className="wrap">
-          <div className="crumb">
-            <Link href={`/${lang}/`}>{companyLabels.breadHome[lang]}</Link>
-            <span className="sep">/</span>
-            <Link href={`/${lang}/company`}>{companyLabels.pageTitle[lang]}</Link>
-            <span className="sep">/</span>
-            <span className="cur">{companyLabels.certiTitle[lang]}</span>
-          </div>
-          <div className="eyebrow"><span className="tick" />Our Company</div>
-          <h1>{companyLabels.certiTitle[lang]}</h1>
-        </div>
-      </div>
-
-      <div className="co-subnav">
-        <div className="wrap">
-          {subNav.map((s) => (
-            <Link
-              key={s.href}
-              href={`/${lang}/${s.href}`}
-              className={s.href === "company/certifications" ? "active" : ""}
-            >
-              {s.label}
-            </Link>
-          ))}
-        </div>
-      </div>
+      <CompanyHeader
+        lang={lang}
+        title={companyLabels.certiTitle[lang]}
+        activeHref={`/${lang}/company/certifications`}
+      />
 
       <section>
         <div className="wrap">

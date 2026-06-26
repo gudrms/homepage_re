@@ -5,6 +5,7 @@ import { isLang, locales, type Lang } from "@/lib/i18n";
 import { aboutIntro, companyLabels } from "@/content/company";
 import { categories } from "@/content/products";
 import Reveal from "@/components/Reveal";
+import CompanyHeader from "@/components/CompanyHeader";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -30,40 +31,13 @@ export default async function CompanyPage({
   const lang: Lang = isLang(raw) ? raw : "ko";
   if (!isLang(raw)) notFound();
 
-  const subNav = [
-    { href: "company", label: companyLabels.aboutTitle[lang] },
-    { href: "company/history", label: companyLabels.historyTitle[lang] },
-    { href: "company/certifications", label: companyLabels.certiTitle[lang] },
-    { href: "company/location", label: companyLabels.locationTitle[lang] },
-  ];
-
   return (
     <>
-      <div className="phero">
-        <div className="wrap">
-          <div className="crumb">
-            <Link href={`/${lang}/`}>{companyLabels.breadHome[lang]}</Link>
-            <span className="sep">/</span>
-            <span className="cur">{companyLabels.pageTitle[lang]}</span>
-          </div>
-          <div className="eyebrow"><span className="tick" />Our Company</div>
-          <h1>{companyLabels.aboutTitle[lang]}</h1>
-        </div>
-      </div>
-
-      <div className="co-subnav">
-        <div className="wrap">
-          {subNav.map((s) => (
-            <Link
-              key={s.href}
-              href={`/${lang}/${s.href}`}
-              className={s.href === "company" ? "active" : ""}
-            >
-              {s.label}
-            </Link>
-          ))}
-        </div>
-      </div>
+      <CompanyHeader
+        lang={lang}
+        title={companyLabels.aboutTitle[lang]}
+        activeHref={`/${lang}/company`}
+      />
 
       <section>
         <div className="wrap co-about">

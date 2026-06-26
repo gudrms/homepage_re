@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import { companyLabels } from "@/content/company";
+import CompanyHeader from "@/components/CompanyHeader";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -28,42 +28,13 @@ export default async function HistoryPage({
   const lang: Lang = isLang(raw) ? raw : "ko";
   if (!isLang(raw)) notFound();
 
-  const subNav = [
-    { href: "company", label: companyLabels.aboutTitle[lang] },
-    { href: "company/history", label: companyLabels.historyTitle[lang] },
-    { href: "company/certifications", label: companyLabels.certiTitle[lang] },
-    { href: "company/location", label: companyLabels.locationTitle[lang] },
-  ];
-
   return (
     <>
-      <div className="phero">
-        <div className="wrap">
-          <div className="crumb">
-            <Link href={`/${lang}/`}>{companyLabels.breadHome[lang]}</Link>
-            <span className="sep">/</span>
-            <Link href={`/${lang}/company`}>{companyLabels.pageTitle[lang]}</Link>
-            <span className="sep">/</span>
-            <span className="cur">{companyLabels.historyTitle[lang]}</span>
-          </div>
-          <div className="eyebrow"><span className="tick" />Our Company</div>
-          <h1>{companyLabels.historyTitle[lang]}</h1>
-        </div>
-      </div>
-
-      <div className="co-subnav">
-        <div className="wrap">
-          {subNav.map((s) => (
-            <Link
-              key={s.href}
-              href={`/${lang}/${s.href}`}
-              className={s.href === "company/history" ? "active" : ""}
-            >
-              {s.label}
-            </Link>
-          ))}
-        </div>
-      </div>
+      <CompanyHeader
+        lang={lang}
+        title={companyLabels.historyTitle[lang]}
+        activeHref={`/${lang}/company/history`}
+      />
 
       <section>
         <div className="wrap">

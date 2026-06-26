@@ -86,16 +86,24 @@ export default function Header({ lang }: { lang: Lang }) {
               <a
                 key={n.id}
                 href={`/${lang}/${n.href}`}
-                className={active === n.id ? "active" : ""}
+                className={isHome && active === n.id ? "active" : ""}
                 onClick={() => setOpen(false)}
               >
                 {n.label[lang]}
               </a>
             ))}
-            <Link href={`/${lang}/company`} onClick={() => setOpen(false)}>
+            <Link
+              href={`/${lang}/company`}
+              className={pathname.startsWith(`/${lang}/company`) ? "active" : ""}
+              onClick={() => setOpen(false)}
+            >
               {lang === "ko" ? "회사소개" : "Company"}
             </Link>
-            <Link href={`/${lang}/news`} onClick={() => setOpen(false)}>
+            <Link
+              href={`/${lang}/news`}
+              className={pathname.startsWith(`/${lang}/news`) ? "active" : ""}
+              onClick={() => setOpen(false)}
+            >
               {lang === "ko" ? "뉴스" : "News"}
             </Link>
           </nav>

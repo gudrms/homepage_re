@@ -25,7 +25,7 @@ export const companyInfo = {
         ko: "건물 지하 2~4층 주차 가능 (10분 무료, 30분 2,000원)",
         en: "Underground B2–B4 parking available (Free 10 min, 2,000 KRW/30 min)",
       },
-      googleMapSrc: "https://maps.google.com/maps?q=서울특별시+서초구+효령로34길+4&t=&z=16&ie=UTF8&iwloc=&output=embed",
+      googleMapSrc: "https://maps.google.com/maps?q=서울특별시+서초구+효령로34길+4+프린스효령빌딩&t=&z=18&ie=UTF8&iwloc=&output=embed",
     },
     busan: {
       label: { ko: "부산 공장", en: "Busan Factory" },
