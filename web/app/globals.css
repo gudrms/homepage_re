@@ -1156,6 +1156,16 @@ footer.site {
   color: #fff;
   letter-spacing: -0.01em;
 }
+.co-hd-sub {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 640px;
+}
+.co-hd--plain .co-hd-top {
+  padding-bottom: 30px;
+}
 .co-hd-tabs-bar {
   background: rgba(0,0,0,0.3);
 }

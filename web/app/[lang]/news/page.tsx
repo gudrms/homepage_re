@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import { news, newsLabels } from "@/content/news";
 import Reveal from "@/components/Reveal";
+import PageHeader from "@/components/PageHeader";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -31,21 +31,14 @@ export default async function NewsPage({
 
   return (
     <>
-      <div className="phero">
-        <div className="wrap">
-          <div className="crumb">
-            <Link href={`/${lang}/`}>{newsLabels.breadcrumbHome[lang]}</Link>
-            <span className="sep">/</span>
-            <span className="cur">{newsLabels.pageTitle[lang]}</span>
-          </div>
-          <div className="eyebrow">
-            <span className="tick" />
-            {newsLabels.eyebrow[lang]}
-          </div>
-          <h1>{newsLabels.pageTitle[lang]}</h1>
-          <p className="summary">{newsLabels.summary[lang]}</p>
-        </div>
-      </div>
+      <PageHeader
+        crumbs={[
+          { label: newsLabels.breadcrumbHome[lang], href: `/${lang}/` },
+          { label: newsLabels.pageTitle[lang] },
+        ]}
+        title={newsLabels.pageTitle[lang]}
+        subtitle={newsLabels.summary[lang]}
+      />
 
       <section>
         <div className="wrap">
