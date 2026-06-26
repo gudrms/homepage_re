@@ -1021,8 +1021,7 @@ footer.site {
 
 /* ---------- company sub-nav ---------- */
 .co-subnav {
-  border-bottom: 1px solid var(--line);
-  background: var(--surface);
+  background: var(--navy);
   position: sticky;
   top: 76px;
   z-index: 10;
@@ -1032,18 +1031,19 @@ footer.site {
   gap: 0;
 }
 .co-subnav a {
-  padding: 14px 20px;
-  font-size: 14px;
+  padding: 10px 18px;
+  font-size: 12px;
   font-weight: 500;
-  color: var(--ink-2);
+  letter-spacing: 0.03em;
+  color: rgba(255,255,255,0.55);
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-color 0.2s;
   white-space: nowrap;
 }
-.co-subnav a:hover { color: var(--blue); }
+.co-subnav a:hover { color: rgba(255,255,255,0.9); }
 .co-subnav a.active {
-  color: var(--blue);
-  border-bottom-color: var(--blue);
+  color: #fff;
+  border-bottom-color: var(--blue-bright);
 }
 
 /* ---------- about ---------- */
@@ -1151,30 +1151,24 @@ footer.site {
 }
 
 /* ---------- location ---------- */
-.loc-tabs {
+.loc-list {
   display: flex;
-  gap: 8px;
-  margin-bottom: 28px;
+  flex-direction: column;
+  gap: 56px;
 }
-.loc-tabs button {
-  padding: 9px 22px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--surface);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink-2);
-  cursor: pointer;
-  transition: 0.2s;
-}
-.loc-tabs button.active {
-  background: var(--blue);
-  border-color: var(--blue);
-  color: #fff;
+.loc-block-title {
+  font-family: var(--disp);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--blue);
+  display: inline-block;
 }
 .loc-wrap {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 360px;
   gap: 32px;
   align-items: start;
 }
@@ -1182,12 +1176,11 @@ footer.site {
   border-radius: 10px;
   overflow: hidden;
   background: var(--line);
-  min-height: 420px;
+  min-height: 360px;
 }
-.loc-map iframe,
-.loc-map .root_daum_roughmap {
+.loc-map iframe {
   width: 100%;
-  height: 420px;
+  height: 360px;
   display: block;
 }
 .loc-info dl {
@@ -1220,9 +1213,11 @@ footer.site {
   .co-biz-grid { grid-template-columns: 1fr 1fr; }
   .certi-grid { grid-template-columns: repeat(3, 1fr); }
   .loc-wrap { grid-template-columns: 1fr; }
+  .loc-map { min-height: 300px; }
+  .loc-map iframe { height: 300px; }
 }
 @media (max-width: 760px) {
   .co-biz-grid { grid-template-columns: 1fr; }
   .certi-grid { grid-template-columns: repeat(2, 1fr); }
-  .co-subnav a { padding: 12px 14px; font-size: 13px; }
+  .co-subnav a { padding: 9px 12px; font-size: 11px; }
 }

@@ -11,7 +11,11 @@ export default function Header({ lang }: { lang: Lang }) {
   const [active, setActive] = useState("top");
   const [open, setOpen] = useState(false);
 
+  // 홈페이지에서만 스크롤스파이 활성화
+  const isHome = pathname === `/${lang}` || pathname === `/${lang}/`;
+
   useEffect(() => {
+    if (!isHome) return;
     // 스크롤스파이 — 현재 보이는 섹션에 맞춰 메뉴 자동 하이라이트
     const els = nav
       .map((n) => document.getElementById(n.id))
@@ -45,7 +49,7 @@ export default function Header({ lang }: { lang: Lang }) {
       spy?.disconnect();
       window.removeEventListener("scroll", onScroll);
     };
-  }, [pathname]);
+  }, [pathname, isHome]);
 
   const koHref = pathname.replace(`/${lang}`, "/ko");
   const enHref = pathname.replace(`/${lang}`, "/en");
