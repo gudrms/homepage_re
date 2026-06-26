@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { isLang, type Lang } from "@/lib/i18n";
-import { robotics, productLabels } from "@/content/products";
+import { isLang, locales, type Lang } from "@/lib/i18n";
+import { categories, getCategory, productLabels } from "@/content/products";
 import Reveal from "@/components/Reveal";
 
 export function generateStaticParams() {
-  return robotics.products.map((p) => ({ slug: p.slug }));
+  return locales.flatMap((lang) =>
+    categories.flatMap((c) =>
+      c.products.map((p) => ({ lang, category: c.slug, slug: p.slug }))
+    )
+  );
 }
 
 export const dynamicParams = false;
@@ -14,11 +18,11 @@ export const dynamicParams = false;
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: string; slug: string }>;
+  params: Promise<{ lang: string; category: string; slug: string }>;
 }): Promise<Metadata> {
-  const { lang: raw, slug } = await params;
+  const { lang: raw, category, slug } = await params;
   const lang: Lang = isLang(raw) ? raw : "ko";
-  const p = robotics.products.find((x) => x.slug === slug);
+  const p = getCategory(category)?.products.find((x) => x.slug === slug);
   if (!p) return {};
   return { title: p.name, description: p.summary[lang] };
 }
@@ -26,12 +30,13 @@ export async function generateMetadata({
 export default async function ProductPage({
   params,
 }: {
-  params: Promise<{ lang: string; slug: string }>;
+  params: Promise<{ lang: string; category: string; slug: string }>;
 }) {
-  const { lang: raw, slug } = await params;
+  const { lang: raw, category, slug } = await params;
   const lang: Lang = isLang(raw) ? raw : "ko";
-  const p = robotics.products.find((x) => x.slug === slug);
-  if (!p) notFound();
+  const c = getCategory(category);
+  const p = c?.products.find((x) => x.slug === slug);
+  if (!c || !p) notFound();
 
   return (
     <>
@@ -40,7 +45,7 @@ export default async function ProductPage({
           <div className="crumb">
             <Link href={`/${lang}/`}>{productLabels.breadcrumbHome[lang]}</Link>
             <span className="sep">/</span>
-            <Link href={`/${lang}/robotics`}>{robotics.title[lang]}</Link>
+            <Link href={`/${lang}/${c.slug}`}>{c.title[lang]}</Link>
             <span className="sep">/</span>
             <span className="cur">{p.name}</span>
           </div>
@@ -49,7 +54,7 @@ export default async function ProductPage({
             <div>
               <div className="eyebrow">
                 <span className="tick" />
-                {robotics.eyebrow}
+                {c.eyebrow}
               </div>
               <h1>{p.name}</h1>
               {p.korName[lang] && <div className="ko-sub">{p.korName[lang]}</div>}
@@ -125,7 +130,7 @@ export default async function ProductPage({
             </div>
           </div>
           <div style={{ marginTop: 40 }}>
-            <Link className="btn btn-line" href={`/${lang}/robotics`}>
+            <Link className="btn btn-line" href={`/${lang}/${c.slug}`}>
               ← {productLabels.backToCategory[lang]}
             </Link>
           </div>

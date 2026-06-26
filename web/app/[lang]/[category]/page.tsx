@@ -1,31 +1,39 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { isLang, locales, type Lang } from "@/lib/i18n";
-import { robotics, productLabels } from "@/content/products";
+import { categories, getCategory, productLabels } from "@/content/products";
 import Reveal from "@/components/Reveal";
 
 export function generateStaticParams() {
-  return locales.map((lang) => ({ lang }));
+  return locales.flatMap((lang) =>
+    categories.map((c) => ({ lang, category: c.slug }))
+  );
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: string }>;
+  params: Promise<{ lang: string; category: string }>;
 }): Promise<Metadata> {
-  const { lang: raw } = await params;
+  const { lang: raw, category } = await params;
   const lang: Lang = isLang(raw) ? raw : "ko";
-  return { title: robotics.title[lang], description: robotics.intro[lang] };
+  const c = getCategory(category);
+  if (!c) return {};
+  return { title: c.title[lang], description: c.intro[lang] };
 }
 
-export default async function RoboticsCategory({
+export default async function CategoryPage({
   params,
 }: {
-  params: Promise<{ lang: string }>;
+  params: Promise<{ lang: string; category: string }>;
 }) {
-  const { lang: raw } = await params;
+  const { lang: raw, category } = await params;
   const lang: Lang = isLang(raw) ? raw : "ko";
-  const c = robotics;
+  const c = getCategory(category);
+  if (!c) notFound();
 
   return (
     <>
@@ -50,7 +58,7 @@ export default async function RoboticsCategory({
           <div className="cat-grid">
             {c.products.map((p, i) => (
               <Reveal key={p.slug} delay={i * 90} className="cat-card">
-                <Link className="ci" href={`/${lang}/robotics/${p.slug}`}>
+                <Link className="ci" href={`/${lang}/${c.slug}/${p.slug}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={p.image} alt={p.name} loading="lazy" />
                 </Link>
@@ -60,7 +68,7 @@ export default async function RoboticsCategory({
                   </span>
                   <h3>{p.name}</h3>
                   <p>{p.summary[lang]}</p>
-                  <Link className="more" href={`/${lang}/robotics/${p.slug}`}>
+                  <Link className="more" href={`/${lang}/${c.slug}/${p.slug}`}>
                     {productLabels.viewDetail[lang]} <span className="arr">→</span>
                   </Link>
                 </div>
