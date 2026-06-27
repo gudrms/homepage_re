@@ -123,8 +123,6 @@ export const home = {
     en: "CORE ROBOTICS will stand at the center of next-generation nuclear power and smart shipbuilding",
   },
   contactEyebrow: { ko: "Get in touch", en: "Get in touch" },
-  contactTitle: { ko: ["프로젝트를", "시작하세요."], en: ["Let's start", "your project."] } as Record<Lang, string[]>,
-  contactHighlight: { ko: "시작", en: "start" },
   labels: {
     hq: { ko: "본사", en: "HQ" },
     factory: { ko: "공장", en: "Factory" },
