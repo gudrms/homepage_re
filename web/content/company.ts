@@ -2,18 +2,20 @@ import type { Lang } from "@/lib/i18n";
 
 type L = Record<Lang, string>;
 
+/** 회사 정보 단일 소스 — Footer·홈 contact·찾아오시는 길이 모두 여기를 참조 */
 export const companyInfo = {
-  nameKo: "㈜코어로보틱스",
-  nameEn: "CORE ROBOTICS Co., Ltd.",
-  ceo: { ko: "대표이사 이명진", en: "CEO : Lee Myeong Jin" },
-  registration: { ko: "사업자등록번호 : 124-81-71983", en: "Company Registration Number : 124-81-71983" },
+  name: { ko: "㈜코어로보틱스", en: "CORE ROBOTICS Co., Ltd." } as L,
+  ceoName: { ko: "이명진", en: "Lee Myeong Jin" } as L,
+  bizNo: "124-81-71983",
+  tel: "02-525-8660",
+  fax: "02-525-8662",
   email: "COREROBOTICS@CORE-ROBOTICS.KR",
   offices: {
     seoul: {
       label: { ko: "서울 본사", en: "Seoul Head Office" },
       address: {
-        ko: "서울특별시 서초구 효령로34길 4, 202호 2층",
-        en: "2F, 202, 4, Hyoryeong-ro 34-gil, Seocho-gu, Seoul, Republic of Korea",
+        ko: "서울특별시 서초구 효령로34길 4, 2층 202호 (방배동, 프린스효령빌딩)",
+        en: "2F 202, 4, Hyoryeong-ro 34-gil, Seocho-gu, Seoul, Republic of Korea",
       },
       tel: "02-525-8660",
       fax: "02-525-8662",

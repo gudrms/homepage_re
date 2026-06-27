@@ -3,14 +3,8 @@ import { isLang, locales, type Lang } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 import { alternates } from "@/lib/seo";
-import {
-  home,
-  businessAreas,
-  specs,
-  trustOrgs,
-  company,
-  addresses,
-} from "@/content/site";
+import { home, businessAreas, specs, trustOrgs } from "@/content/site";
+import { companyInfo } from "@/content/company";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -192,22 +186,22 @@ export default async function Home({
             <div className="info">
             <div className="row">
               <div className="k">{home.labels.hq[lang]}</div>
-              <div className="v">{addresses.hq[lang]}</div>
+              <div className="v">{companyInfo.offices.seoul.address[lang]}</div>
             </div>
             <div className="row">
               <div className="k">{home.labels.factory[lang]}</div>
-              <div className="v">{addresses.factory[lang]}</div>
+              <div className="v">{companyInfo.offices.busan.address[lang]}</div>
             </div>
             <div className="row">
               <div className="k">Tel</div>
               <div className="v">
-                {company.tel} &nbsp;/&nbsp; Fax {company.fax}
+                {companyInfo.tel} &nbsp;/&nbsp; Fax {companyInfo.fax}
               </div>
             </div>
             <div className="row">
               <div className="k">Mail</div>
               <div className="v">
-                <a href={`mailto:${company.email}`}>{company.email}</a>
+                <a href={`mailto:${companyInfo.email}`}>{companyInfo.email}</a>
               </div>
             </div>
             </div>

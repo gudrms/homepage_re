@@ -1,12 +1,6 @@
 import type { Lang } from "@/lib/i18n";
 
-/** 회사 공통 정보 (언어 무관) */
-export const company = {
-  bizNo: "124-81-71983",
-  tel: "02-525-8660",
-  fax: "02-525-8662",
-  email: "COREROBOTICS@CORE-ROBOTICS.KR",
-};
+// 회사 공통 정보(전화·주소·대표 등)는 content/company.ts 의 companyInfo 단일 소스를 사용
 
 type L = Record<Lang, string>;
 
@@ -139,20 +133,6 @@ export const home = {
     learnMore: { ko: "자세히 보기", en: "Learn more" },
   },
 };
-
-export const addresses = {
-  hq: {
-    ko: "서울특별시 서초구 효령로34길 4, 2층 202호 (방배동, 프린스효령빌딩)",
-    en: "4, Hyoryeong-ro 34-gil, Seocho-gu, Seoul, Republic of Korea",
-  } as L,
-  factory: {
-    ko: "부산광역시 기장군 장안읍 의과학6로 17",
-    en: "17, Uigwahak 6-ro, Jangan-eup, Gijang-gun, Busan, Republic of Korea",
-  } as L,
-};
-
-export const companyName: L = { ko: "㈜코어로보틱스", en: "CORE ROBOTICS Co., Ltd." };
-export const ceoName: L = { ko: "이명진", en: "Lee Myung-jin" };
 
 /** 푸터 사이트맵 */
 export const footerNav: { title: L; links: { label: L; href: string }[] }[] = [

@@ -1,12 +1,6 @@
 import Link from "next/link";
-import {
-  company,
-  companyName,
-  ceoName,
-  addresses,
-  footerNav,
-  footerLabels,
-} from "@/content/site";
+import { footerNav, footerLabels } from "@/content/site";
+import { companyInfo } from "@/content/company";
 import type { Lang } from "@/lib/i18n";
 
 export default function Footer({ lang }: { lang: Lang }) {
@@ -38,29 +32,29 @@ export default function Footer({ lang }: { lang: Lang }) {
         <div className="foot-div" />
 
         <div className="foot-info">
-          <div className="foot-co">{companyName[lang]}</div>
+          <div className="foot-co">{companyInfo.name[lang]}</div>
           <div className="foot-meta">
             <span>
-              {footerLabels.ceo[lang]} : {ceoName[lang]}
+              {footerLabels.ceo[lang]} : {companyInfo.ceoName[lang]}
             </span>
             <i>|</i>
             <span>
-              {footerLabels.bizNo[lang]} : {company.bizNo}
+              {footerLabels.bizNo[lang]} : {companyInfo.bizNo}
             </span>
             <i>|</i>
             <span>
-              {footerLabels.tel[lang]} : {company.tel}
+              {footerLabels.tel[lang]} : {companyInfo.tel}
             </span>
             <i>|</i>
             <span>
-              {footerLabels.fax[lang]} : {company.fax}
+              {footerLabels.fax[lang]} : {companyInfo.fax}
             </span>
           </div>
           <div className="foot-addr">
-            {footerLabels.hq[lang]} : {addresses.hq[lang]}
+            {footerLabels.hq[lang]} : {companyInfo.offices.seoul.address[lang]}
           </div>
           <div className="foot-addr">
-            {footerLabels.factory[lang]} : {addresses.factory[lang]}
+            {footerLabels.factory[lang]} : {companyInfo.offices.busan.address[lang]}
           </div>
           <div className="foot-copy">Copyright ⓒ CORE ROBOTICS. All rights reserved.</div>
         </div>
