@@ -1,0 +1,80 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/sub/about.php", "destination": "/ko/company/", "statusCode": 301 },
+    { "source": "/sub/history.php", "destination": "/ko/company/history/", "statusCode": 301 },
+    { "source": "/sub/certi.php", "destination": "/ko/company/certifications/", "statusCode": 301 },
+    { "source": "/sub/coming.php", "destination": "/ko/company/location/", "statusCode": 301 },
+
+    { "source": "/sub/robot.php", "destination": "/ko/robotics/", "statusCode": 301 },
+    { "source": "/sub/robot1.php", "destination": "/ko/robotics/automation/", "statusCode": 301 },
+    { "source": "/sub/robot2.php", "destination": "/ko/robotics/decommissioning/", "statusCode": 301 },
+    { "source": "/sub/robot3.php", "destination": "/ko/robotics/master-slave/", "statusCode": 301 },
+    { "source": "/sub/robot4.php", "destination": "/ko/robotics/vr-training/", "statusCode": 301 },
+
+    { "source": "/sub/ai.php", "destination": "/ko/ai/", "statusCode": 301 },
+    { "source": "/sub/ai1.php", "destination": "/ko/ai/diagnostic-equipment/", "statusCode": 301 },
+    { "source": "/sub/ai2.php", "destination": "/ko/ai/startup-shutdown/", "statusCode": 301 },
+    { "source": "/sub/ai3.php", "destination": "/ko/ai/sensor-monitoring/", "statusCode": 301 },
+
+    { "source": "/sub/engine.php", "destination": "/ko/engineering/", "statusCode": 301 },
+    { "source": "/sub/engine1.php", "destination": "/ko/engineering/pov/", "statusCode": 301 },
+    { "source": "/sub/engine2.php", "destination": "/ko/engineering/inleakage/", "statusCode": 301 },
+    { "source": "/sub/engine3.php", "destination": "/ko/engineering/movids/", "statusCode": 301 },
+    { "source": "/sub/engine4.php", "destination": "/ko/engineering/acsentt/", "statusCode": 301 },
+
+    {
+      "source": "/bbs/board.php",
+      "has": [
+        { "type": "query", "key": "bo_table", "value": "news" },
+        { "type": "query", "key": "wr_id", "value": "(?<id>\\d+)" }
+      ],
+      "destination": "/ko/news/:id/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bbs/board.php",
+      "has": [{ "type": "query", "key": "bo_table", "value": "news" }],
+      "destination": "/ko/news/",
+      "statusCode": 301
+    },
+
+    { "source": "/en/sub/about.php", "destination": "/en/company/", "statusCode": 301 },
+    { "source": "/en/sub/history.php", "destination": "/en/company/history/", "statusCode": 301 },
+    { "source": "/en/sub/certi.php", "destination": "/en/company/certifications/", "statusCode": 301 },
+    { "source": "/en/sub/coming.php", "destination": "/en/company/location/", "statusCode": 301 },
+
+    { "source": "/en/sub/robot.php", "destination": "/en/robotics/", "statusCode": 301 },
+    { "source": "/en/sub/robot1.php", "destination": "/en/robotics/automation/", "statusCode": 301 },
+    { "source": "/en/sub/robot2.php", "destination": "/en/robotics/decommissioning/", "statusCode": 301 },
+    { "source": "/en/sub/robot3.php", "destination": "/en/robotics/master-slave/", "statusCode": 301 },
+    { "source": "/en/sub/robot4.php", "destination": "/en/robotics/vr-training/", "statusCode": 301 },
+
+    { "source": "/en/sub/ai.php", "destination": "/en/ai/", "statusCode": 301 },
+    { "source": "/en/sub/ai1.php", "destination": "/en/ai/diagnostic-equipment/", "statusCode": 301 },
+    { "source": "/en/sub/ai2.php", "destination": "/en/ai/startup-shutdown/", "statusCode": 301 },
+    { "source": "/en/sub/ai3.php", "destination": "/en/ai/sensor-monitoring/", "statusCode": 301 },
+
+    { "source": "/en/sub/engine.php", "destination": "/en/engineering/", "statusCode": 301 },
+    { "source": "/en/sub/engine1.php", "destination": "/en/engineering/pov/", "statusCode": 301 },
+    { "source": "/en/sub/engine2.php", "destination": "/en/engineering/inleakage/", "statusCode": 301 },
+    { "source": "/en/sub/engine3.php", "destination": "/en/engineering/movids/", "statusCode": 301 },
+    { "source": "/en/sub/engine4.php", "destination": "/en/engineering/acsentt/", "statusCode": 301 },
+
+    {
+      "source": "/en/bbs/board.php",
+      "has": [
+        { "type": "query", "key": "bo_table", "value": "news" },
+        { "type": "query", "key": "wr_id", "value": "(?<id>\\d+)" }
+      ],
+      "destination": "/en/news/:id/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/bbs/board.php",
+      "has": [{ "type": "query", "key": "bo_table", "value": "news" }],
+      "destination": "/en/news/",
+      "statusCode": 301
+    }
+  ]
+}
