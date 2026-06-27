@@ -163,6 +163,10 @@ export default async function Home({
             <em>{vh}</em>
             {vqAfter}
           </q>
+          <a className="band-cta" href={`/${lang}/company`}>
+            {lang === "ko" ? "회사소개 보기" : "About the company"}
+            <span className="arr">→</span>
+          </a>
         </div>
       </div>
 

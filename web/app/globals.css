@@ -542,6 +542,29 @@ section {
   font-style: normal;
   color: var(--blue-bright);
 }
+.band-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 36px;
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+}
+.band-cta:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--blue-bright);
+}
+.band-cta .arr {
+  transition: transform 0.15s;
+}
+.band-cta:hover .arr {
+  transform: translateX(3px);
+}
 
 /* ---------- contact ---------- */
 .contact {
