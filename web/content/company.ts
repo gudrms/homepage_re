@@ -70,6 +70,6 @@ export const companyLabels = {
   fax: { ko: "팩스", en: "Fax" } as L,
   directions: { ko: "교통", en: "Directions" } as L,
   parking: { ko: "주차", en: "Parking" } as L,
-  bizAreas: { ko: "사업 분야", en: "Business Areas" } as L,
+  viewBusiness: { ko: "사업영역 보기", en: "Explore Business" } as L,
   breadHome: { ko: "홈", en: "Home" } as L,
 };

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import { aboutIntro, companyLabels } from "@/content/company";
-import { categories } from "@/content/products";
 import Reveal from "@/components/Reveal";
 import CompanyHeader from "@/components/CompanyHeader";
 
@@ -47,22 +46,11 @@ export default async function CompanyPage({
             ))}
           </Reveal>
 
-          <div className="co-biz-title">
-            <span className="eyebrow"><span className="tick" />{companyLabels.bizAreas[lang]}</span>
-          </div>
-          <div className="co-biz-grid">
-            {categories.map((c, i) => (
-              <Reveal key={c.slug} delay={i * 90} className="co-biz-card">
-                <Link href={`/${lang}/${c.slug}`}>
-                  <span className="co-biz-no">{c.no}</span>
-                  <span className="co-biz-eyebrow">{c.eyebrow}</span>
-                  <h3>{c.title[lang]}</h3>
-                  <p>{c.intro[lang]}</p>
-                  <span className="more">{lang === "ko" ? "자세히 보기" : "Learn more"} <span className="arr">→</span></span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal className="co-cta">
+            <Link className="btn btn-primary" href={`/${lang}/#biz`}>
+              {companyLabels.viewBusiness[lang]} <span className="arr">→</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
     </>
