@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
+import { alternates } from "@/lib/seo";
 import {
   home,
   businessAreas,
@@ -28,9 +29,7 @@ export async function generateMetadata({
         ? "코어로보틱스 | CORE ROBOTICS"
         : "CORE ROBOTICS | Nuclear · Robotics · AI",
     description: home.heroLead[lang],
-    alternates: {
-      languages: { ko: "/ko/", en: "/en/" },
-    },
+    alternates: alternates(lang, ""),
   };
 }
 

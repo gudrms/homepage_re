@@ -5,6 +5,7 @@ import { isLang, locales, type Lang } from "@/lib/i18n";
 import { news, newsLabels } from "@/content/news";
 import Reveal from "@/components/Reveal";
 import PageHeader from "@/components/PageHeader";
+import { alternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -18,7 +19,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: raw } = await params;
   const lang: Lang = isLang(raw) ? raw : "ko";
-  return { title: newsLabels.pageTitle[lang], description: newsLabels.summary[lang] };
+  return {
+    title: newsLabels.pageTitle[lang],
+    description: newsLabels.summary[lang],
+    alternates: alternates(lang, "news"),
+  };
 }
 
 export default async function NewsPage({

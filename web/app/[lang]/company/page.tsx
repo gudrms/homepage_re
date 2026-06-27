@@ -5,6 +5,7 @@ import { isLang, locales, type Lang } from "@/lib/i18n";
 import { aboutIntro, companyLabels } from "@/content/company";
 import Reveal from "@/components/Reveal";
 import CompanyHeader from "@/components/CompanyHeader";
+import { alternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -18,7 +19,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: raw } = await params;
   const lang: Lang = isLang(raw) ? raw : "ko";
-  return { title: companyLabels.pageTitle[lang] };
+  return {
+    title: companyLabels.pageTitle[lang],
+    alternates: alternates(lang, "company"),
+  };
 }
 
 export default async function CompanyPage({

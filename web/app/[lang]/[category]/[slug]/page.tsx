@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import { categories, getCategory, productLabels } from "@/content/products";
 import Reveal from "@/components/Reveal";
+import { alternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return locales.flatMap((lang) =>
@@ -24,7 +25,11 @@ export async function generateMetadata({
   const lang: Lang = isLang(raw) ? raw : "ko";
   const p = getCategory(category)?.products.find((x) => x.slug === slug);
   if (!p) return {};
-  return { title: p.name, description: p.summary[lang] };
+  return {
+    title: p.name,
+    description: p.summary[lang],
+    alternates: alternates(lang, `${category}/${slug}`),
+  };
 }
 
 export default async function ProductPage({

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import { news, getNewsItem, newsLabels } from "@/content/news";
 import PageHeader from "@/components/PageHeader";
+import { alternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return locales.flatMap((lang) => news.map((n) => ({ lang, id: n.id })));
@@ -22,6 +23,7 @@ export async function generateMetadata({
   return {
     title: `${item.title[lang]} | ${newsLabels.pageTitle[lang]}`,
     description: item.body[lang][0],
+    alternates: alternates(lang, `news/${id}`),
   };
 }
 
