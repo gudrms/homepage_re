@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Splash from "@/components/Splash";
+import { SITE_URL } from "@/lib/seo";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -18,7 +19,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.core-robotics.kr"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "코어로보틱스 | CORE ROBOTICS",
     template: "%s | CORE ROBOTICS",

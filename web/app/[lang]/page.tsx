@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
@@ -137,9 +138,9 @@ export default async function Home({
                       <li key={j}>{it[lang]}</li>
                     ))}
                   </ul>
-                  <a className="more" href={`/${lang}${a.href}`}>
+                  <Link className="more" href={`/${lang}${a.href}`}>
                     {home.labels.learnMore[lang]} <span className="arr">→</span>
-                  </a>
+                  </Link>
                 </div>
               </Reveal>
             ))}
@@ -156,10 +157,10 @@ export default async function Home({
             <em>{vh}</em>
             {vqAfter}
           </q>
-          <a className="band-cta" href={`/${lang}/company`}>
+          <Link className="band-cta" href={`/${lang}/company`}>
             {lang === "ko" ? "회사소개 보기" : "About the company"}
             <span className="arr">→</span>
-          </a>
+          </Link>
         </div>
       </div>
 

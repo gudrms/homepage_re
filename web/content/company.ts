@@ -1,6 +1,4 @@
-import type { Lang } from "@/lib/i18n";
-
-type L = Record<Lang, string>;
+import type { L } from "@/lib/i18n";
 
 /** 회사 정보 단일 소스 — Footer·홈 contact·찾아오시는 길이 모두 여기를 참조 */
 export const companyInfo = {

@@ -1,6 +1,4 @@
-import type { Lang } from "@/lib/i18n";
-
-type L = Record<Lang, string>;
+import type { L } from "@/lib/i18n";
 
 export type NewsItem = {
   /** 구 사이트 게시판 wr_id — 신/구 URL 301 매핑에 사용 */

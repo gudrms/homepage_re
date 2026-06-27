@@ -1,6 +1,4 @@
-import type { Lang } from "@/lib/i18n";
-
-type L = Record<Lang, string>;
+import type { L } from "@/lib/i18n";
 
 export type Feature = { title: string; points: L[] };
 export type Product = {

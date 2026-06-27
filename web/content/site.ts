@@ -1,8 +1,6 @@
-import type { Lang } from "@/lib/i18n";
+import type { Lang, L } from "@/lib/i18n";
 
 // 회사 공통 정보(전화·주소·대표 등)는 content/company.ts 의 companyInfo 단일 소스를 사용
-
-type L = Record<Lang, string>;
 
 export type NavItem = { id: string; href: string; label: L };
 export type BusinessArea = {
