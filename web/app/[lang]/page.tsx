@@ -121,6 +121,7 @@ export default async function Home({
           <div className="cards">
             {businessAreas.map((a, i) => (
               <Reveal key={a.no} delay={i * 110} className="card">
+                <Link className="card-link" href={`/${lang}${a.href}`} aria-label={a.title[lang]} />
                 <div className="thumb">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={a.image} alt={a.title[lang]} loading="lazy" />
@@ -138,9 +139,9 @@ export default async function Home({
                       <li key={j}>{it[lang]}</li>
                     ))}
                   </ul>
-                  <Link className="more" href={`/${lang}${a.href}`}>
+                  <span className="more">
                     {home.labels.learnMore[lang]} <span className="arr">→</span>
-                  </Link>
+                  </span>
                 </div>
               </Reveal>
             ))}

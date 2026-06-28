@@ -404,6 +404,11 @@ section {
   box-shadow: 0 22px 44px -26px rgba(11, 35, 68, 0.4);
   transform: translateY(-5px);
 }
+.card .card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
 .card .thumb {
   aspect-ratio: 16 / 10;
   background: var(--navy);
@@ -1065,6 +1070,11 @@ footer.site {
 }
 .cat-card:hover .cb .more .arr {
   transform: translateX(4px);
+}
+.cat-foot {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 /* ---------- responsive ---------- */

@@ -81,6 +81,11 @@ export default async function CategoryPage({
               </Reveal>
             ))}
           </div>
+          <div className="cat-foot">
+            <Link className="btn btn-line" href={`/${lang}/`}>
+              {productLabels.backToHome[lang]}
+            </Link>
+          </div>
         </div>
       </section>
     </>

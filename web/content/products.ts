@@ -490,5 +490,6 @@ export const productLabels = {
   application: { ko: "적용 분야", en: "Application" } as L,
   brochure: { ko: "제품 브로슈어 다운로드", en: "Download Brochure" } as L,
   backToCategory: { ko: "사업영역으로 돌아가기", en: "Back to business area" } as L,
+  backToHome: { ko: "← 홈으로", en: "← Back to home" } as L,
   viewDetail: { ko: "자세히 보기", en: "View detail" } as L,
 };
