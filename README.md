@@ -59,9 +59,11 @@ npm run build
 
 ```env
 NEXT_PUBLIC_WEB3FORMS_KEY=web3forms_access_key
+NEXT_PUBLIC_SITE_URL=https://homepage-re.vercel.app
 ```
 
 이 값이 없으면 사이트는 빌드되지만 문의폼은 전송하지 않고 설정 오류 메시지를 보여줍니다. 운영 배포 전 반드시 실제 키를 설정해야 합니다.
+`NEXT_PUBLIC_SITE_URL`은 canonical, sitemap, Open Graph 이미지 URL에 사용됩니다. 공식 도메인 연결 전에는 Vercel 배포 주소를 사용하고, 운영 도메인 연결 후 `https://www.core-robotics.kr`로 바꾸면 됩니다.
 
 ## 배포 메모
 
@@ -69,7 +71,7 @@ NEXT_PUBLIC_WEB3FORMS_KEY=web3forms_access_key
 - 정적 export 특성상 Next 이미지 최적화는 비활성화되어 있습니다.
 - `web/vercel.json`에 기존 PHP 주소에서 새 URL로 이동하는 301 리다이렉트가 있습니다.
 - 루트 `/`는 Vercel에서 `/ko/`로 302 리다이렉트됩니다.
-- 공식 도메인은 `web/lib/seo.ts`에 정의되어 있습니다.
+- 기본 사이트 URL은 `web/lib/seo.ts`에 정의되어 있고, Vercel 환경 변수 `NEXT_PUBLIC_SITE_URL`로 덮어쓸 수 있습니다.
 
 ```text
 https://www.core-robotics.kr

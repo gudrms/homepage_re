@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import type { Lang } from "@/lib/i18n";
 
-export const SITE_URL = "https://www.core-robotics.kr";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://homepage-re.vercel.app";
 
 /**
  * hreflang/canonical alternates 생성.

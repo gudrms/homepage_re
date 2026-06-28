@@ -55,9 +55,11 @@ next.config.ts        # 정적 export 설정
 
 ```env
 NEXT_PUBLIC_WEB3FORMS_KEY=web3forms_access_key
+NEXT_PUBLIC_SITE_URL=https://homepage-re.vercel.app
 ```
 
 키가 없으면 사용자가 제출 버튼을 눌러도 외부 API로 전송하지 않고 설정 오류 메시지를 표시합니다.
+`NEXT_PUBLIC_SITE_URL`은 canonical, sitemap, Open Graph 이미지 URL의 기준 도메인입니다. 공식 도메인 연결 후에는 `https://www.core-robotics.kr`로 설정하세요.
 
 ## SEO
 
@@ -71,4 +73,4 @@ NEXT_PUBLIC_WEB3FORMS_KEY=web3forms_access_key
 - 기존 PHP URL에서 새 URL로 이동하는 Vercel 301 리다이렉트
 - `/`에서 `/ko/`로 이동하는 Vercel 302 리다이렉트
 
-운영 도메인은 `lib/seo.ts`의 `SITE_URL`에서 관리합니다.
+사이트 기준 URL은 `lib/seo.ts`의 `SITE_URL`에서 관리하며, `NEXT_PUBLIC_SITE_URL` 환경 변수로 덮어쓸 수 있습니다.
