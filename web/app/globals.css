@@ -15,8 +15,8 @@
   --blue-bright: #1f97d4;
   --blue-soft: #e7f1fa;
 
-  --disp: var(--font-archivo), "Archivo", sans-serif;
-  --mono: var(--font-plex-mono), "IBM Plex Mono", monospace;
+  --disp: var(--font-pretendard), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --kr: var(--font-pretendard), -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 

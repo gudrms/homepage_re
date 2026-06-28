@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SITE_URL } from "@/lib/seo";
@@ -11,20 +10,6 @@ const pretendard = localFont({
   weight: "45 920",
   display: "swap",
   preload: false,
-});
-
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -61,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${archivo.variable} ${plexMono.variable} ${pretendard.variable}`}>
+    <html lang="ko" className={pretendard.variable}>
       <body>
         {children}
       </body>
