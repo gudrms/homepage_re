@@ -23,12 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
   news.forEach((n) => subs.push(`news/${n.id}`));
 
-  const now = new Date();
+  const lastModified = new Date("2026-06-28");
 
   return locales.flatMap((lang) =>
     subs.map((sub) => ({
       url: `${SITE_URL}/${lang}${sub ? `/${sub}` : ""}/`,
-      lastModified: now,
+      lastModified,
       changeFrequency: "monthly" as const,
       priority: sub === "" ? 1 : 0.7,
     }))

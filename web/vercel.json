@@ -1,6 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
+    { "source": "/", "destination": "/ko/", "statusCode": 302 },
+
     { "source": "/sub/about.php", "destination": "/ko/company/", "statusCode": 301 },
     { "source": "/sub/history.php", "destination": "/ko/company/history/", "statusCode": 301 },
     { "source": "/sub/certi.php", "destination": "/ko/company/certifications/", "statusCode": 301 },

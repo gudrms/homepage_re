@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     title: "코어로보틱스 | CORE ROBOTICS",
     description:
       "원자력·플랜트를 위한 특수목적 로봇, AI 예측·진단, 엔지니어링 진단장비 — ㈜코어로보틱스.",
-    images: [{ url: "/logo.png", width: 1200, height: 630, alt: "CORE ROBOTICS" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "CORE ROBOTICS" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "코어로보틱스 | CORE ROBOTICS",
     description:
       "원자력·플랜트를 위한 특수목적 로봇, AI 예측·진단, 엔지니어링 진단장비 — ㈜코어로보틱스.",
-    images: ["/logo.png"],
+    images: ["/og-image.png"],
   },
 };
 
