@@ -8,8 +8,9 @@ export default function Splash() {
 
   useEffect(() => {
     if (sessionStorage.getItem("crSplashSeen")) {
-      setState("gone");
-      return;
+      // effect 본문에서 동기 setState를 피하려 다음 프레임에 처리
+      const raf = requestAnimationFrame(() => setState("gone"));
+      return () => cancelAnimationFrame(raf);
     }
     const t1 = setTimeout(() => setState("hide"), 500);
     const t2 = setTimeout(() => {
