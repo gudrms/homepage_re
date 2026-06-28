@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import Splash from "@/components/Splash";
 import { SITE_URL } from "@/lib/seo";
 
 // Pretendard 셀프호스팅 — 외부 CDN @import(렌더 차단) 제거. swap+preload off로 첫 페인트 비차단
@@ -64,7 +63,6 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${archivo.variable} ${plexMono.variable} ${pretendard.variable}`}>
       <body>
-        <Splash />
         {children}
       </body>
     </html>
