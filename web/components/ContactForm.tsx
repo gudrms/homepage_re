@@ -67,8 +67,16 @@ export default function ContactForm({ lang }: { lang: Lang }) {
 
   return (
     <form className="cform" onSubmit={onSubmit}>
-      {/* 스팸 봇 방지용 honeypot */}
-      <input type="checkbox" name="botcheck" className="cform-hp" tabIndex={-1} autoComplete="off" />
+      {/* 스팸 봇 방지용 honeypot — 보조기술/탭 순서에서 제외 */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        className="cform-hp"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        aria-label="Leave this field empty"
+      />
 
       <div className="cform-row2">
         <label className="cform-field">

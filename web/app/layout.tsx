@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
 import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Splash from "@/components/Splash";
 import { SITE_URL } from "@/lib/seo";
+
+// Pretendard 셀프호스팅 — 외부 CDN @import(렌더 차단) 제거. swap+preload off로 첫 페인트 비차단
+const pretendard = localFont({
+  src: "./fonts/PretendardVariable.woff2",
+  variable: "--font-pretendard",
+  weight: "45 920",
+  display: "swap",
+  preload: false,
+});
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -52,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${archivo.variable} ${plexMono.variable}`}>
+    <html lang="ko" className={`${archivo.variable} ${plexMono.variable} ${pretendard.variable}`}>
       <body>
         <Splash />
         {children}

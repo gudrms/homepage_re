@@ -16,7 +16,7 @@ export default function Footer({ lang }: { lang: Lang }) {
           <nav className="foot-cols">
             {footerNav.map((col, i) => (
               <div className="foot-col" key={i}>
-                <h4>{col.title[lang]}</h4>
+                <h2>{col.title[lang]}</h2>
                 <ul>
                   {col.links.map((l, j) => (
                     <li key={j}>

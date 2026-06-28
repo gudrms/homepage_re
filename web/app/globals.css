@@ -1,4 +1,3 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
 @import "tailwindcss";
 
 :root {
@@ -9,7 +8,7 @@
   --navy-2: #10325f;
   --ink: #0c2340;
   --ink-2: #46586e;
-  --ink-3: #7d8da0;
+  --ink-3: #5e6d80; /* 대비 강화(AA): 흰 배경에서 4.5:1 이상 */
   --line: #dbe3ee;
   --line-2: #c7d3e2;
   --blue: #0e6fb3;
@@ -18,7 +17,7 @@
 
   --disp: var(--font-archivo), "Archivo", sans-serif;
   --mono: var(--font-plex-mono), "IBM Plex Mono", monospace;
-  --kr: "Pretendard", -apple-system, sans-serif;
+  --kr: var(--font-pretendard), -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 
 * {
@@ -726,7 +725,7 @@ footer.site {
   gap: 64px;
   flex-wrap: wrap;
 }
-.foot-col h4 {
+.foot-col h2 {
   font-family: var(--disp);
   font-weight: 700;
   font-size: 15px;
