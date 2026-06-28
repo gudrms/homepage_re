@@ -72,4 +72,6 @@ export const companyLabels = {
   parking: { ko: "주차", en: "Parking" } as L,
   viewBusiness: { ko: "사업영역 보기", en: "Explore Business" } as L,
   breadHome: { ko: "홈", en: "Home" } as L,
+  download: { ko: "이미지 다운로드", en: "Download image" } as L,
+  close: { ko: "닫기", en: "Close" } as L,
 };

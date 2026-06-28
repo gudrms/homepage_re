@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLang, locales, type Lang } from "@/lib/i18n";
 import { certifications, companyLabels } from "@/content/company";
-import Reveal from "@/components/Reveal";
 import CompanyHeader from "@/components/CompanyHeader";
+import CertGallery from "@/components/CertGallery";
 import { alternates } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -43,15 +43,11 @@ export default async function CertificationsPage({
 
       <section>
         <div className="wrap">
-          <div className="certi-grid">
-            {certifications.map((c, i) => (
-              <Reveal key={i} delay={i * 60} className="certi-card">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.image} alt={c.label[lang]} loading="lazy" />
-                <p>{c.label[lang]}</p>
-              </Reveal>
-            ))}
-          </div>
+          <CertGallery
+            items={certifications.map((c) => ({ image: c.image, label: c.label[lang] }))}
+            downloadLabel={companyLabels.download[lang]}
+            closeLabel={companyLabels.close[lang]}
+          />
         </div>
       </section>
     </>
