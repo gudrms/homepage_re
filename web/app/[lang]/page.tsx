@@ -46,51 +46,41 @@ export default async function Home({
       <div className="hero" id="top">
         <div className="wrap hero-grid">
           <div>
-            <Reveal>
-              <div className="eyebrow">
-                <span className="tick" />
-                {home.eyebrow[lang]}
-              </div>
-            </Reveal>
+            <div className="eyebrow">
+              <span className="tick" />
+              {home.eyebrow[lang]}
+            </div>
             <h1 className="title">
               {home.heroTitle[lang].map((line, i) => (
-                <Reveal key={i} delay={120 + i * 120}>
-                  <span className={i === 1 ? "accent" : ""}>{line}</span>
-                </Reveal>
+                <span key={i} className={i === 1 ? "accent" : ""}>{line}</span>
               ))}
             </h1>
-            <Reveal delay={540}>
-              <p className="lead">{home.heroLead[lang]}</p>
-            </Reveal>
-            <Reveal delay={660}>
-              <div className="hero-btns">
-                <a className="btn btn-primary" href="#biz">
-                  {home.ctaPrimary[lang]} →
-                </a>
-                <a className="btn btn-line" href="#contact">
-                  {home.ctaSecondary[lang]}
-                </a>
-              </div>
-            </Reveal>
+            <p className="lead">{home.heroLead[lang]}</p>
+            <div className="hero-btns">
+              <a className="btn btn-primary" href="#biz">
+                {home.ctaPrimary[lang]} →
+              </a>
+              <a className="btn btn-line" href="#contact">
+                {home.ctaSecondary[lang]}
+              </a>
+            </div>
           </div>
 
-          <Reveal delay={400}>
-            <aside className="spec">
-              <div className="head">
-                <span className="t">{home.specHead[lang]}</span>
-                <span className="led" />
+          <aside className="spec">
+            <div className="head">
+              <span className="t">{home.specHead[lang]}</span>
+              <span className="led" />
+            </div>
+            {specs.map((s, i) => (
+              <div className="row" key={i}>
+                <span className="k">{s.k[lang]}</span>
+                <span className="v">
+                  {s.v}
+                  <small>{s.unit[lang]}</small>
+                </span>
               </div>
-              {specs.map((s, i) => (
-                <div className="row" key={i}>
-                  <span className="k">{s.k[lang]}</span>
-                  <span className="v">
-                    {s.v}
-                    <small>{s.unit[lang]}</small>
-                  </span>
-                </div>
-              ))}
-            </aside>
-          </Reveal>
+            ))}
+          </aside>
         </div>
       </div>
 
