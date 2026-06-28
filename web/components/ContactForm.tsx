@@ -10,6 +10,8 @@ import type { Lang } from "@/lib/i18n";
  */
 const WEB3FORMS_KEY =
   process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
+const isContactFormConfigured =
+  WEB3FORMS_KEY !== "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
 
 type Status = "idle" | "sending" | "ok" | "error";
 
@@ -30,6 +32,10 @@ const t = {
     ko: "전송에 실패했습니다. 잠시 후 다시 시도하시거나 이메일로 연락 주세요.",
     en: "Failed to send. Please try again later or contact us by email.",
   },
+  configError: {
+    ko: "문의폼 설정이 완료되지 않았습니다. 이메일로 연락 주세요.",
+    en: "The contact form is not configured. Please contact us by email.",
+  },
 } satisfies Record<string, Record<Lang, string>>;
 
 export default function ContactForm({ lang }: { lang: Lang }) {
@@ -37,6 +43,10 @@ export default function ContactForm({ lang }: { lang: Lang }) {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!isContactFormConfigured) {
+      setStatus("error");
+      return;
+    }
     setStatus("sending");
 
     const form = e.currentTarget;
@@ -110,7 +120,11 @@ export default function ContactForm({ lang }: { lang: Lang }) {
       </button>
 
       {status === "ok" && <p className="cform-msg ok">{t.ok[lang]}</p>}
-      {status === "error" && <p className="cform-msg error">{t.error[lang]}</p>}
+      {status === "error" && (
+        <p className="cform-msg error">
+          {isContactFormConfigured ? t.error[lang] : t.configError[lang]}
+        </p>
+      )}
     </form>
   );
 }
