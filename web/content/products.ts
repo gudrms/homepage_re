@@ -34,7 +34,7 @@ export const robotics: Category = {
     ko: "작업자의 감각을 대신하는 힘 제어 기술, 시야를 대신하는 비전 기술 등을 통해 접근이 어렵고 위험이 높은 작업을 대신할 수 있는 로보틱스 제품을 개발합니다.",
     en: "Through force-control technology that replaces the worker's senses and vision technology that replaces human sight, we develop robotics products that perform tasks that are hard to access and pose high risk to workers.",
   },
-  image: "/images/robot_img1.png",
+  image: "/images/robot_img1.webp",
   products: [
     {
       slug: "automation",
@@ -46,7 +46,7 @@ export const robotics: Category = {
         ko: "원전 내 고방사선 구역에서의 작업에 대한 운영 및 유지보수를 수행하는 자동화 로봇입니다.",
         en: "An automated robot that performs operation and maintenance for work in high-radiation areas within nuclear power plants.",
       },
-      image: "/images/robot1_big_img.png",
+      image: "/images/robot1_big_img.webp",
       features: [
         {
           title: "Precision Robot Control",
@@ -93,7 +93,7 @@ export const robotics: Category = {
         ko: "원전 및 위험설비 해체 시 원격으로 조종하여 해체작업(절단 및 이송)을 수행하는 원격해체 로봇입니다.",
         en: "A remote dismantling robot, remotely controlled to perform dismantling work (cutting and transport) of nuclear power plants and hazardous facilities.",
       },
-      image: "/images/robot2_big_img.png",
+      image: "/images/robot2_big_img.webp",
       features: [
         {
           title: "7-DOF Dual-arm Manipulator",
@@ -139,7 +139,7 @@ export const robotics: Category = {
         ko: "다양한 산업용 및 특수목적 로봇시스템에 적용성이 확보된 6-DOF 원격제어 마스터 시스템입니다.",
         en: "A 6-DOF remote-control master system with proven applicability to various industrial and special-purpose robot systems.",
       },
-      image: "/images/robot3_big_img.png",
+      image: "/images/robot3_big_img.webp",
       features: [
         {
           title: "6-DOF Master-arm",
@@ -173,7 +173,7 @@ export const robotics: Category = {
         ko: "원격제어 마스터와 특수목적용 로봇의 운용 정확도와 숙련도를 향상시키기 위한 가상현실 기반 원격 트레이닝 시스템입니다.",
         en: "A virtual-reality-based remote training system to improve the operating accuracy and proficiency of remote-control masters and special-purpose robots.",
       },
-      image: "/images/robot4_slide_img1.png",
+      image: "/images/robot4_slide_img1.webp",
       features: [
         {
           title: "Virtual Physical Environment",
@@ -208,7 +208,7 @@ export const ai: Category = {
     ko: "4차 산업혁명을 주도하는 인공지능 기술 및 빅데이터 분석기술을 기반으로 플랜트 상태감시 기술, 회전기기 예측진단 시스템 등을 개발하였고, 상태진단을 넘어 미래의 고장을 예측하는 예측진단 분야에 앞서 나가고 있습니다.",
     en: "Based on AI and big-data analysis technology leading the 4th industrial revolution, we have developed plant condition-monitoring and rotating-machinery predictive-diagnosis systems, leading the field of predictive diagnosis that goes beyond condition diagnosis to predict future failures.",
   },
-  image: "/images/ai_img1.png",
+  image: "/images/ai_img1.webp",
   products: [
     {
       slug: "diagnostic-equipment",
@@ -220,7 +220,7 @@ export const ai: Category = {
         ko: "머신러닝과 인공지능 기술을 통해 전문가의 분석 없이도 고장 원인을 스스로 진단하여, 원인별 심각도 및 설비의 계속 운전 여부를 판단하는 진단 장비입니다.",
         en: "Equipment that self-diagnoses the cause of failure without expert analysis through machine learning and AI, determining the severity of each cause and whether the facility can continue operating.",
       },
-      image: "/images/ai111_big_img.jpg",
+      image: "/images/ai111_big_img.webp",
       features: [
         { title: "AI-Based Diagnosis", points: [{ ko: "머신러닝을 통한 고장 원인 검출", en: "Detection of failure causes through machine learning" }] },
         { title: "Sensor Location Compensation", points: [{ ko: "진동 신호의 구조적 노이즈 최소화 알고리즘", en: "Structural-noise minimization algorithm for vibration signals" }] },
@@ -247,7 +247,7 @@ export const ai: Category = {
         ko: "플랜트 상태감시 기술과 규칙기반 전문가 시스템을 결합하여 조기경보 발령 및 원인을 자동으로 진단하는 시스템입니다.",
         en: "A system that combines plant condition-monitoring technology with a rule-based expert system to issue early warnings and automatically diagnose their causes.",
       },
-      image: "/images/ai2_big_img.png",
+      image: "/images/ai2_big_img.webp",
       features: [
         { title: "Condition Monitoring", points: [{ ko: "기동/정지 전 출력 운전 상태 감시", en: "Output-operation monitoring before start/stop" }, { ko: "출력 변동에 무관한 감시 성능", en: "Monitoring performance independent of output fluctuation" }] },
         { title: "Reliability", points: [{ ko: "오경보율 최소화", en: "Minimized false-alarm rate" }] },
@@ -273,7 +273,7 @@ export const ai: Category = {
         ko: "플랜트에서 측정되는 신호의 건전성과 불확도를 평가하여 계측센서의 성능을 감시하는 시스템입니다.",
         en: "A system that monitors the performance of measurement sensors by evaluating the integrity and uncertainty of signals measured in the plant.",
       },
-      image: "/images/ai3_big_img.png",
+      image: "/images/ai3_big_img.webp",
       features: [
         { title: "Reliability", points: [{ ko: "계측기 신뢰도 향상", en: "Improved instrument reliability" }, { ko: "드리프트 실시간 감지", en: "Real-time drift detection" }] },
         { title: "Improvement", points: [{ ko: "발전소 운전여유도 개선", en: "Improved plant operating margin" }, { ko: "드리프트 감지 민감도·정확도 향상", en: "Improved drift-detection sensitivity and accuracy" }] },
@@ -301,7 +301,7 @@ export const engineering: Category = {
     ko: "원자력발전소 및 산업 플랜트의 안전성과 신뢰성을 확보하기 위한 밸브 진단, 공기누설 시험, 측정 센서 등 다양한 엔지니어링 서비스 및 진단 장비를 제공합니다.",
     en: "We provide a range of engineering services and diagnostic equipment — including valve diagnostics, air in-leakage testing, and measurement sensors — to ensure the safety and reliability of nuclear power plants and industrial plants.",
   },
-  image: "/images/engine2_big_img.png",
+  image: "/images/engine2_big_img.webp",
   products: [
     {
       slug: "pov",
@@ -313,7 +313,7 @@ export const engineering: Category = {
         ko: "동력 작동 밸브(MOV/AOV)의 정기적인 성능 평가를 통해 밸브 운전 신뢰성을 확보하고, 시간에 따른 취약도 변화를 감시·평가하여 플랜트 안전성을 향상시키는 진단 서비스입니다.",
         en: "A diagnostic service that secures valve operation reliability through periodic performance evaluation of power-operated valves (MOV/AOV) and improves plant safety by monitoring and evaluating the degree of vulnerability over time.",
       },
-      image: "/images/engine2_big_img.png",
+      image: "/images/engine2_big_img.webp",
       features: [
         {
           title: "Technology",
@@ -354,7 +354,7 @@ export const engineering: Category = {
         ko: "산업용 건축물의 환기 성능을 시험하고 원자력발전소 제어실의 운전원 거주성을 평가하는 공기누설 시험 서비스입니다.",
         en: "A service for testing the ventilation performance of industrial buildings and evaluating operator habitability in the control room of nuclear power plants.",
       },
-      image: "/images/engine2_big_img.png",
+      image: "/images/engine2_big_img.webp",
       features: [
         {
           title: "KOLAS Recognition",
@@ -396,7 +396,7 @@ export const engineering: Category = {
         ko: "동력 작동 밸브(MOV/AOV)를 진단하는 장비로 신호 취득, 성능 변수 추출, 진단 등 밸브 진단에 필요한 모든 기능을 갖추고 있습니다.",
         en: "Equipment for diagnosing power-operated valves (MOV/AOV), equipped with all functions necessary for valve diagnosis including signal acquisition, performance variable extraction, and diagnosis.",
       },
-      image: "/images/engine3_big_img.png",
+      image: "/images/engine3_big_img.webp",
       features: [
         {
           title: "Convenience",
@@ -439,7 +439,7 @@ export const engineering: Category = {
         ko: "밸브 스템의 추력과 토크를 측정하는 스트레인 게이지 방식의 센서로, 밸브의 상태를 감시·진단하기 위해 개발된 국산화 제품입니다.",
         en: "A strain gauge-type sensor that measures the thrust and torque of valve stems for monitoring and diagnosing valve condition — a domestically developed product.",
       },
-      image: "/images/engine2_big_img.png",
+      image: "/images/engine2_big_img.webp",
       features: [
         {
           title: "Precision",

@@ -44,7 +44,7 @@ export default async function HistoryPage({
         <div className="wrap">
           <div className="co-history-img">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/history_img.png" alt={companyLabels.historyTitle[lang]} />
+            <img src="/images/history_img.webp" alt={companyLabels.historyTitle[lang]} />
           </div>
         </div>
       </section>

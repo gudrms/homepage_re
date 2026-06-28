@@ -26,7 +26,7 @@ export const businessAreas: BusinessArea[] = [
     no: "01",
     tag: "Robotics",
     href: "/robotics",
-    image: "/images/robot1_big_img.png",
+    image: "/images/robot1_big_img.webp",
     title: { ko: "특수목적용 로봇", en: "Special Purpose Robotics" },
     en: "Special Purpose Robotics",
     desc: {
@@ -44,7 +44,7 @@ export const businessAreas: BusinessArea[] = [
     no: "02",
     tag: "AI",
     href: "/ai",
-    image: "/images/ai2_big_img.png",
+    image: "/images/ai2_big_img.webp",
     title: { ko: "AI 예측·진단", en: "AI Predictive Diagnostics" },
     en: "AI Predictive Diagnostics",
     desc: {
@@ -62,7 +62,7 @@ export const businessAreas: BusinessArea[] = [
     no: "03",
     tag: "Engineering",
     href: "/engineering",
-    image: "/images/engine2_big_img.png",
+    image: "/images/engine2_big_img.webp",
     title: { ko: "엔지니어링·진단장비", en: "Engineering & Diagnostics" },
     en: "Engineering & Diagnostics",
     desc: {

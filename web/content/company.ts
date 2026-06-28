@@ -42,16 +42,16 @@ export const companyInfo = {
 };
 
 export const certifications: { image: string; label: L }[] = [
-  { image: "/images/certi_img1.png", label: { ko: "적격공급자 등록증 (POV)", en: "Qualified Supplier Registration Certificate (POV)" } },
-  { image: "/images/certi_img2.png", label: { ko: "적격공급자 등록증 (CRH)", en: "Qualified Supplier Registration Certificate (CRH)" } },
-  { image: "/images/certi_img3.png", label: { ko: "혁신제품 지정 확인서", en: "Innovative Product Designation Certificate" } },
-  { image: "/images/certi_img4.png", label: { ko: "벤처기업 확인서", en: "Certificate of Venture Business" } },
-  { image: "/images/certi_img5.png", label: { ko: "KOLAS 공인 인정서", en: "KOLAS Certificate of Accreditation" } },
-  { image: "/images/certi_img6.png", label: { ko: "우수 동반성장 협력 표창", en: "Citation for Excellent Shared Growth Cooperation" } },
-  { image: "/images/certi_img7.png", label: { ko: "경영시스템 인증서", en: "Management System Certificate" } },
-  { image: "/images/certi_img8.png", label: { ko: "연구개발서비스업 신고확인서", en: "Research and Development Service Business Certificate" } },
-  { image: "/images/certi_img9.png", label: { ko: "엔지니어링사업자 신고확인서", en: "Engineering Business Registration Certificate" } },
-  { image: "/images/certi_img10.png", label: { ko: "KEPIC-MN 자격 인증서", en: "KEPIC-MN Qualification Certificate" } },
+  { image: "/images/certi_img1.webp", label: { ko: "적격공급자 등록증 (POV)", en: "Qualified Supplier Registration Certificate (POV)" } },
+  { image: "/images/certi_img2.webp", label: { ko: "적격공급자 등록증 (CRH)", en: "Qualified Supplier Registration Certificate (CRH)" } },
+  { image: "/images/certi_img3.webp", label: { ko: "혁신제품 지정 확인서", en: "Innovative Product Designation Certificate" } },
+  { image: "/images/certi_img4.webp", label: { ko: "벤처기업 확인서", en: "Certificate of Venture Business" } },
+  { image: "/images/certi_img5.webp", label: { ko: "KOLAS 공인 인정서", en: "KOLAS Certificate of Accreditation" } },
+  { image: "/images/certi_img6.webp", label: { ko: "우수 동반성장 협력 표창", en: "Citation for Excellent Shared Growth Cooperation" } },
+  { image: "/images/certi_img7.webp", label: { ko: "경영시스템 인증서", en: "Management System Certificate" } },
+  { image: "/images/certi_img8.webp", label: { ko: "연구개발서비스업 신고확인서", en: "Research and Development Service Business Certificate" } },
+  { image: "/images/certi_img9.webp", label: { ko: "엔지니어링사업자 신고확인서", en: "Engineering Business Registration Certificate" } },
+  { image: "/images/certi_img10.webp", label: { ko: "KEPIC-MN 자격 인증서", en: "KEPIC-MN Qualification Certificate" } },
 ];
 
 export const aboutIntro: L = {

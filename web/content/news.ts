@@ -20,7 +20,7 @@ export const news: NewsItem[] = [
       ko: "㈜코어로보틱스 유자격공급자 등록증 안내",
       en: "CORE ROBOTICS Qualified Supplier Registration Certificate",
     },
-    images: ["/images/news/25_1.jpg", "/images/news/25_2.jpg"],
+    images: ["/images/news/25_1.webp", "/images/news/25_2.webp"],
     body: {
       ko: ["㈜코어로보틱스의 동력구동밸브 진단시험 용역, 원전 주제어실 거주성 평가용역 유자격공급자 등록증을 안내드립니다."],
       en: ["We are pleased to share CORE ROBOTICS' Qualified Supplier registration certificates for power-operated valve diagnostic testing services and nuclear main control room habitability assessment services."],
@@ -34,7 +34,7 @@ export const news: NewsItem[] = [
       ko: "㈜코어로보틱스 KOLAS 공인시험기관 인정서 안내",
       en: "CORE ROBOTICS KOLAS Accredited Testing Laboratory Certificate",
     },
-    images: ["/images/news/24_1.jpg"],
+    images: ["/images/news/24_1.webp"],
     body: {
       ko: ["㈜코어로보틱스의 KOLAS 공인시험기관 인정서를 안내드립니다."],
       en: ["We are pleased to share CORE ROBOTICS' KOLAS Accredited Testing Laboratory certificate."],
@@ -48,7 +48,7 @@ export const news: NewsItem[] = [
       ko: "㈜코어로보틱스 ISO 9001 · ISO 19443 · ISO 45001 인증(갱신)",
       en: "CORE ROBOTICS ISO 9001 / ISO 19443 / ISO 45001 Certification (Renewal)",
     },
-    images: ["/images/news/23_1.jpg", "/images/news/23_2.jpg", "/images/news/23_3.jpg"],
+    images: ["/images/news/23_1.webp", "/images/news/23_2.webp", "/images/news/23_3.webp"],
     body: {
       ko: ["㈜코어로보틱스의 품질경영시스템 인증(ISO 9001), 원자력 공급망 품질경영시스템 인증(ISO 19443), 안전보건경영시스템 인증(ISO 45001)을 안내드립니다."],
       en: ["We are pleased to share CORE ROBOTICS' certifications: Quality Management System (ISO 9001), Nuclear Supply Chain Quality Management System (ISO 19443), and Occupational Health and Safety Management System (ISO 45001)."],
@@ -62,7 +62,7 @@ export const news: NewsItem[] = [
       ko: "㈜코어로보틱스 KEPIC-MN 원자력 품질보증 자격 인증(갱신)",
       en: "CORE ROBOTICS KEPIC-MN Nuclear Quality Assurance Qualification (Renewal)",
     },
-    images: ["/images/news/22_1.jpg"],
+    images: ["/images/news/22_1.webp"],
     body: {
       ko: [
         "KEPIC-MN 원자력 품질보증 자격 인증이 갱신되었습니다.",
@@ -110,7 +110,7 @@ export const news: NewsItem[] = [
       ko: "㈜엠앤디 '원전기업 인증(골드)' 획득",
       en: "M&D Awarded 'Nuclear Enterprise Certification (Gold)'",
     },
-    images: ["/images/news/19_1.png"],
+    images: ["/images/news/19_1.webp"],
     body: {
       ko: [
         "㈜엠앤디는 한국원자력산업협회로부터 '원전산업 이해와 수행역량'을 종합적으로 평가받은 결과 2024년 2월 15일 원전기업 인증 최고 등급인 '골드' 등급을 획득하였습니다. ㈜엠앤디는 앞으로도 원전산업 기술경쟁력 제고와 원자력발전소 안전성 향상에 기여할 수 있도록 최선을 다하겠습니다.",
@@ -130,7 +130,7 @@ export const news: NewsItem[] = [
       ko: "㈜엠앤디 동반성장위원회 ESG 우수 중소기업 선정",
       en: "M&D Selected as ESG Excellent SME by the Win-Win Growth Committee",
     },
-    images: ["/images/news/17_1.png", "/images/news/17_2.png"],
+    images: ["/images/news/17_1.webp", "/images/news/17_2.webp"],
     body: {
       ko: [
         "㈜엠앤디는 환경(Environmental), 사회(Social), 지배구조(Governance)를 고려한 사회적 기업으로 발전하도록 노력하고 있으며, 2023년 9월 25일 동반성장위원회로부터 글로벌 수준의 사회적 책임을 이행하는 중소기업으로 인정받아 ESG 우수 중소기업으로 선정되었습니다.",
@@ -150,7 +150,7 @@ export const news: NewsItem[] = [
       ko: "㈜엠앤디 '원전수출 첫걸음 프로그램' 선정",
       en: "M&D Selected for the 'First Step to Nuclear Export' Program",
     },
-    images: ["/images/news/15_1.jpg"],
+    images: ["/images/news/15_1.webp"],
     body: {
       ko: [
         "㈜엠앤디는 2023년 11월 15일 산업통상자원부에서 개최한 '원전수출 첫걸음 프로그램 발대식'에 참여했습니다.",
@@ -172,7 +172,7 @@ export const news: NewsItem[] = [
       ko: "㈜엠앤디 민관합동 SMR 얼라이언스 참여",
       en: "M&D Joins the Public-Private SMR Alliance",
     },
-    images: ["/images/news/13_1.jpg"],
+    images: ["/images/news/13_1.webp"],
     body: {
       ko: [
         "㈜엠앤디는 2023년 7월 4일 '민관합동 소형모듈원자로(SMR) 얼라이언스' 출범식에 참여했습니다.",
@@ -196,7 +196,7 @@ export const news: NewsItem[] = [
       ko: "안전보건 경영방침 및 목표",
       en: "Safety & Health Management Policy and Objectives",
     },
-    images: ["/images/news/12_1.jpg"],
+    images: ["/images/news/12_1.webp"],
     body: {
       ko: ["㈜엠앤디는 안전보건을 경영의 최우선 가치로 인식하고 법규 및 기준을 준수하는 안전보건관리체계를 구축하여, 임직원 및 업무관계자에게 미치는 유해·위험요인을 사전에 제거 및 예방하고자 안전보건 경영방침 및 목표를 선언합니다."],
       en: ["M&D recognizes safety and health as the top priority of its management. By establishing a safety and health management system that complies with laws and standards, it declares this Safety and Health Management Policy and Objectives to proactively eliminate and prevent hazards and risks affecting its employees and business partners."],
@@ -210,7 +210,7 @@ export const news: NewsItem[] = [
       ko: "KIMM-Family 기업 협약 체결",
       en: "KIMM-Family Company Agreement Signed",
     },
-    images: ["/images/news/11_1.jpg"],
+    images: ["/images/news/11_1.webp"],
     body: {
       ko: [
         "㈜엠앤디는 2023년 3월 29일 한국기계연구원(KIMM)과 KIMM-Family 기업 협약식을 진행했습니다.",
@@ -232,7 +232,7 @@ export const news: NewsItem[] = [
       ko: "한국수력원자력㈜ 동반성장 최우수 협력기업 선정",
       en: "Selected as KHNP Best Win-Win Growth Partner",
     },
-    images: ["/images/news/10_1.jpg", "/images/news/10_2.jpg"],
+    images: ["/images/news/10_1.webp", "/images/news/10_2.webp"],
     body: {
       ko: [
         "한국수력원자력, 최우수 및 우수협력기업 특별 포상",
@@ -253,13 +253,13 @@ export const news: NewsItem[] = [
       en: "FilterBot (Liquid Filter Replacement Automation) Delivered to Hanbit Units 1 & 2",
     },
     images: [
-      "/images/news/5_1.jpg",
-      "/images/news/5_2.jpg",
-      "/images/news/5_3.jpg",
-      "/images/news/5_4.jpg",
-      "/images/news/5_5.jpg",
-      "/images/news/5_6.jpg",
-      "/images/news/5_7.jpg",
+      "/images/news/5_1.webp",
+      "/images/news/5_2.webp",
+      "/images/news/5_3.webp",
+      "/images/news/5_4.webp",
+      "/images/news/5_5.webp",
+      "/images/news/5_6.webp",
+      "/images/news/5_7.webp",
     ],
     body: {
       ko: ["2021년 12월 20일, 한빛 1·2호기에 FilterBot(액체필터 교체 자동화설비)을 납품했습니다."],
@@ -274,7 +274,7 @@ export const news: NewsItem[] = [
       ko: "산업통상자원부장관 표창 수상 (로봇개발부 김성신 부장)",
       en: "Minister of Trade, Industry and Energy Commendation (Kim Sung-shin)",
     },
-    images: ["/images/news/4_1.jpg"],
+    images: ["/images/news/4_1.webp"],
     body: {
       ko: ["2021년 11월 17일, 로봇개발부 김성신 부장이 원자력분야 노사협력 및 전력안전을 통하여 국가사회발전에 기여한 공을 인정받아 산업통상자원부장관 표창을 수상하였습니다."],
       en: ["On November 17, 2021, Kim Sung-shin, General Manager of the Robotics Development Department, received a commendation from the Minister of Trade, Industry and Energy in recognition of his contribution to national and social development through labor-management cooperation and electrical safety in the nuclear field."],
@@ -288,7 +288,7 @@ export const news: NewsItem[] = [
       ko: "'필터교체 자동화 설비' 개발선정품 지정",
       en: "'Filter Replacement Automation Equipment' Designated as Development-Selected Product",
     },
-    images: ["/images/news/3_1.png"],
+    images: ["/images/news/3_1.webp"],
     body: {
       ko: [
         "'필터교체 자동화 설비'가 한국수력원자력㈜ 개발선정품으로 지정되었습니다.",
