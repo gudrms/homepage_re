@@ -1535,7 +1535,7 @@ footer.site {
     rgba(31, 151, 212, 0.12),
     transparent 60%
   );
-  transition: opacity 0.55s ease, visibility 0.55s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .splash--hide {
   opacity: 0;
@@ -1569,7 +1569,7 @@ footer.site {
   border-radius: 2px;
   transform-origin: left center;
   transform: scaleX(0);
-  animation: splashBar 1.15s ease forwards;
+  animation: splashBar 0.5s ease forwards;
 }
 @keyframes splashIn {
   from { opacity: 0; transform: translateY(8px) scale(0.95); }

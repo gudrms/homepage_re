@@ -11,11 +11,11 @@ export default function Splash() {
       setState("gone");
       return;
     }
-    const t1 = setTimeout(() => setState("hide"), 1100);
+    const t1 = setTimeout(() => setState("hide"), 500);
     const t2 = setTimeout(() => {
       sessionStorage.setItem("crSplashSeen", "1");
       setState("gone");
-    }, 1700);
+    }, 800);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
