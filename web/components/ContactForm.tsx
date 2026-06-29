@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import type { Lang } from "@/lib/i18n";
 
@@ -23,6 +24,11 @@ const t = {
   message: { ko: "문의 내용", en: "Message" },
   optional: { ko: "(선택)", en: "(optional)" },
   submit: { ko: "문의 보내기", en: "Send inquiry" },
+  consent: {
+    ko: "개인정보 수집·이용에 동의합니다.",
+    en: "I agree to the collection and use of personal information.",
+  },
+  privacy: { ko: "개인정보 처리방침", en: "Privacy Policy" },
   sending: { ko: "전송 중…", en: "Sending…" },
   ok: {
     ko: "문의가 정상적으로 접수되었습니다. 빠른 시일 내에 회신드리겠습니다.",
@@ -113,6 +119,13 @@ export default function ContactForm({ lang }: { lang: Lang }) {
       <label className="cform-field">
         <span>{t.message[lang]}</span>
         <textarea name="message" rows={5} required />
+      </label>
+
+      <label className="cform-consent">
+        <input type="checkbox" name="privacy_consent" value="agreed" required />
+        <span>
+          {t.consent[lang]} <Link href={`/${lang}/privacy`}>{t.privacy[lang]}</Link>
+        </span>
       </label>
 
       <button type="submit" className="cform-submit" disabled={status === "sending"}>

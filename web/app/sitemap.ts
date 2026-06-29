@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "company/certifications",
     "company/location",
     "news",
+    "privacy",
   ];
 
   categories.forEach((c) => {

@@ -56,6 +56,11 @@ export default function Footer({ lang }: { lang: Lang }) {
           <div className="foot-addr">
             {footerLabels.factory[lang]} : {companyInfo.offices.busan.address[lang]}
           </div>
+          <div className="foot-links">
+            <Link href={`/${lang}/privacy`}>
+              {lang === "ko" ? "개인정보 처리방침" : "Privacy Policy"}
+            </Link>
+          </div>
           <div className="foot-copy">Copyright ⓒ CORE ROBOTICS. All rights reserved.</div>
         </div>
       </div>
