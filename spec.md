@@ -80,7 +80,7 @@ web/
 /[lang]/ai , /ai/{diagnostic-equipment,startup-shutdown,sensor-monitoring}
 /[lang]/engineering , /engineering/{pov,inleakage,movids,acsentt}
 /[lang]/news
-/[lang]/contact
+/[lang]/privacy
 ```
 301 리다이렉트(`/sub/*.php` → 신 URL)는 **배포 단계**에서 `vercel.json`(redirects) 또는 Cloudflare `_redirects`로 처리. (정적 export는 next.config redirects 미지원)
 
@@ -112,7 +112,34 @@ npm run build    # 정적 빌드 → web/out/
 
 ## 7. 미결 / 주의
 
-- **문의 폼**: 1차는 UI만, 전송 미연결. 활성화 시 외부 폼 서비스 + 개인정보 동의/처리방침 필요.
+- **문의 폼**: Web3Forms 전송 연동, 개인정보 수집·이용 동의 체크박스 및 `/[lang]/privacy` 처리방침 적용. 실제 운영 전 수신 메일과 처리방침 문구는 회사 검토 필요.
 - **협력기관 표기**(한수원·중부발전): 회사 게시 허가 확인 후 확정.
 - **Next 16 주의**: `web/AGENTS.md` 안내대로 `node_modules/next/dist/docs/` 참고. `params`는 `Promise`(await 필요).
 - **이미지 속 텍스트**: 스펙/기능은 HTML 텍스트로 분리(SEO·접근성). site-audit.md §이미지 처리 기준 참고.
+
+## 8. 향후 확장: 채용/복지 페이지
+
+채용 관련 콘텐츠는 1차 운영 안정화 후 별도 개발한다. 초기 범위는 채용 공고 관리 시스템이 아니라 정적 안내 페이지로 제한한다.
+
+### 권장 라우트
+
+```
+/[lang]/careers
+```
+
+### 초기 페이지 구성
+
+- 인재상: 원자력·발전·로보틱스·AI 진단 분야에 맞는 문제 해결 역량과 안전 중심 태도
+- 주요 직무 분야: Robotics, AI Diagnostics, Engineering, Software/Control
+- 근무 환경 및 복지: 확정된 제도만 기재하고, 내용이 부족하면 채용 페이지 내부 섹션으로 처리
+- 채용/상시 지원 문의: 별도 이력서 업로드 없이 기존 문의 채널 또는 회사 이메일로 유도
+
+### 보류할 기능
+
+- 이력서/포트폴리오 파일 업로드: 개인정보·파일 보관·보안·스팸 대응 범위가 커지므로 초기 버전에서는 제외
+- 채용 공고 상세(`/careers/{slug}`): 실제 공고 운영이 시작될 때 확장
+- 지원자 DB/관리자 기능: 백엔드 도입 시 별도 설계
+
+### 개인정보 영향
+
+채용 문의가 이름, 이메일, 연락처, 경력 정보까지 포함하면 개인정보 처리방침에 채용 목적, 보유 기간, 수집 항목을 별도로 추가해야 한다. 이력서 파일을 받는 경우 민감 정보 포함 가능성이 있으므로 동의 문구와 보관 정책을 재검토한다.
